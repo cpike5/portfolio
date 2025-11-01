@@ -1,0 +1,32 @@
+/* Design Tokens */
+
+:root {
+    /* Colors */
+    --color-background: #232933;
+    --color-primary: #b741fe;
+    --color-primary-hover: #d680ff;
+    --color-accent-pink: #fb4a8b;
+    --color-accent-blue: #0d5596;
+    --color-text: #e0e0e0;
+
+    /* Typography */
+    --font-family-base: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-family-display: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-size-base: 16px;
+    --font-size-nav: 0.95rem;
+    --font-size-hero: 5rem;
+    --font-size-section-title: 2.5rem;
+    --font-size-work-title: 1.5rem;
+    --font-size-body: 1.125rem;
+    --font-weight-nav: 500;
+    --font-weight-hero: 100;
+    --font-weight-section-title: 300;
+    --font-weight-work-title: 400;
+
+    /* Spacing */
+    --spacing-nav-vertical: 2rem;
+    --spacing-nav-horizontal: 2rem;
+
+    /* Transitions */
+    --transition-base: 0.3s ease;
+}
