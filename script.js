@@ -30,21 +30,23 @@ sections.forEach(section => navObserver.observe(section));
 const backToTopButton = document.getElementById('backToTop');
 const hero = document.getElementById('home');
 
-window.addEventListener('scroll', () => {
-    const heroRect = hero.getBoundingClientRect();
-    if (heroRect.bottom < 0) {
-        backToTopButton.classList.add('visible');
-    } else {
-        backToTopButton.classList.remove('visible');
-    }
-});
-
-backToTopButton.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+if (backToTopButton && hero) {
+    window.addEventListener('scroll', () => {
+        const heroRect = hero.getBoundingClientRect();
+        if (heroRect.bottom < 0) {
+            backToTopButton.classList.add('visible');
+        } else {
+            backToTopButton.classList.remove('visible');
+        }
     });
-});
+
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
 
 // Scroll Animations
 const fadeInElements = document.querySelectorAll('.fade-in');
@@ -136,99 +138,102 @@ function clearFieldValidation(input, errorElement) {
     errorElement.classList.remove('visible');
 }
 
-// Character counter for message field
-function updateCharCounter() {
-    const maxLength = 500;
-    const currentLength = messageInput.value.length;
-    const remaining = maxLength - currentLength;
+if (contactForm) {
 
-    charCounter.textContent = `${remaining} character${remaining !== 1 ? 's' : ''} remaining`;
+    // Character counter for message field
+    function updateCharCounter() {
+        const maxLength = 500;
+        const currentLength = messageInput.value.length;
+        const remaining = maxLength - currentLength;
 
-    charCounter.classList.remove('warning', 'limit');
-    if (remaining <= 0) {
-        charCounter.classList.add('limit');
-    } else if (remaining <= 50) {
-        charCounter.classList.add('warning');
-    }
-}
+        charCounter.textContent = `${remaining} character${remaining !== 1 ? 's' : ''} remaining`;
 
-messageInput.addEventListener('input', updateCharCounter);
-
-// Real-time validation on blur
-nameInput.addEventListener('blur', () => {
-    validateField(nameInput, document.getElementById('nameError'), null);
-});
-
-emailInput.addEventListener('blur', () => {
-    validateField(emailInput, document.getElementById('emailError'), validateEmail);
-});
-
-messageInput.addEventListener('blur', () => {
-    validateField(messageInput, document.getElementById('messageError'), null);
-});
-
-// Clear validation on focus
-nameInput.addEventListener('focus', () => {
-    clearFieldValidation(nameInput, document.getElementById('nameError'));
-});
-
-emailInput.addEventListener('focus', () => {
-    clearFieldValidation(emailInput, document.getElementById('emailError'));
-});
-
-messageInput.addEventListener('focus', () => {
-    clearFieldValidation(messageInput, document.getElementById('messageError'));
-});
-
-// Show form message
-function showFormMessage(message, type) {
-    formMessage.textContent = message;
-    formMessage.className = 'form-message visible ' + type;
-
-    // Auto-hide after 5 seconds
-    setTimeout(() => {
-        formMessage.classList.remove('visible');
-    }, 5000);
-}
-
-// Form submission
-contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    // Validate all fields
-    const isNameValid = validateField(nameInput, document.getElementById('nameError'), null);
-    const isEmailValid = validateField(emailInput, document.getElementById('emailError'), validateEmail);
-    const isMessageValid = validateField(messageInput, document.getElementById('messageError'), null);
-
-    if (!isNameValid || !isEmailValid || !isMessageValid) {
-        showFormMessage('Please fix the errors above', 'error');
-        return;
+        charCounter.classList.remove('warning', 'limit');
+        if (remaining <= 0) {
+            charCounter.classList.add('limit');
+        } else if (remaining <= 50) {
+            charCounter.classList.add('warning');
+        }
     }
 
-    // Show overlay and disable form
-    formOverlay.classList.add('visible');
-    submitButton.disabled = true;
+    messageInput.addEventListener('input', updateCharCounter);
 
-    // Simulate form submission (2 second delay)
-    try {
-        await new Promise(resolve => setTimeout(resolve, 2000));
+    // Real-time validation on blur
+    nameInput.addEventListener('blur', () => {
+        validateField(nameInput, document.getElementById('nameError'), null);
+    });
 
-        // Success! Hide overlay, hide form, show success state
-        formOverlay.classList.remove('visible');
+    emailInput.addEventListener('blur', () => {
+        validateField(emailInput, document.getElementById('emailError'), validateEmail);
+    });
 
-        // Wait for overlay to fade out, then show success state
+    messageInput.addEventListener('blur', () => {
+        validateField(messageInput, document.getElementById('messageError'), null);
+    });
+
+    // Clear validation on focus
+    nameInput.addEventListener('focus', () => {
+        clearFieldValidation(nameInput, document.getElementById('nameError'));
+    });
+
+    emailInput.addEventListener('focus', () => {
+        clearFieldValidation(emailInput, document.getElementById('emailError'));
+    });
+
+    messageInput.addEventListener('focus', () => {
+        clearFieldValidation(messageInput, document.getElementById('messageError'));
+    });
+
+    // Show form message
+    function showFormMessage(message, type) {
+        formMessage.textContent = message;
+        formMessage.className = 'form-message visible ' + type;
+
+        // Auto-hide after 5 seconds
         setTimeout(() => {
-            formWrapper.style.display = 'none';
-            successState.classList.add('visible');
-        }, 300);
-
-    } catch (error) {
-        // Error handling
-        formOverlay.classList.remove('visible');
-        submitButton.disabled = false;
-        showFormMessage('Oops! Something went wrong. Please try again.', 'error');
+            formMessage.classList.remove('visible');
+        }, 5000);
     }
-});
+
+    // Form submission
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        // Validate all fields
+        const isNameValid = validateField(nameInput, document.getElementById('nameError'), null);
+        const isEmailValid = validateField(emailInput, document.getElementById('emailError'), validateEmail);
+        const isMessageValid = validateField(messageInput, document.getElementById('messageError'), null);
+
+        if (!isNameValid || !isEmailValid || !isMessageValid) {
+            showFormMessage('Please fix the errors above', 'error');
+            return;
+        }
+
+        // Show overlay and disable form
+        formOverlay.classList.add('visible');
+        submitButton.disabled = true;
+
+        // Simulate form submission (2 second delay)
+        try {
+            await new Promise(resolve => setTimeout(resolve, 2000));
+
+            // Success! Hide overlay, hide form, show success state
+            formOverlay.classList.remove('visible');
+
+            // Wait for overlay to fade out, then show success state
+            setTimeout(() => {
+                formWrapper.style.display = 'none';
+                successState.classList.add('visible');
+            }, 300);
+
+        } catch (error) {
+            // Error handling
+            formOverlay.classList.remove('visible');
+            submitButton.disabled = false;
+            showFormMessage('Oops! Something went wrong. Please try again.', 'error');
+        }
+    });
+}
 
 // Mobile Menu Toggle
 const mobileMenuButton = document.getElementById('mobileMenuButton');
@@ -236,28 +241,30 @@ const mobileMenu = document.getElementById('mobileMenu');
 const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
 const mobileMenuClose = document.getElementById('mobileMenuClose');
 
-function openMobileMenu() {
-    mobileMenu.classList.add('active');
-    mobileMenuOverlay.classList.add('active');
-    document.body.style.overflow = 'hidden';
+if (mobileMenuButton && mobileMenu && mobileMenuOverlay && mobileMenuClose) {
+    function openMobileMenu() {
+        mobileMenu.classList.add('active');
+        mobileMenuOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileMenu() {
+        mobileMenu.classList.remove('active');
+        mobileMenuOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    // Open menu when button is clicked
+    mobileMenuButton.addEventListener('click', openMobileMenu);
+
+    // Close menu when close button is clicked
+    mobileMenuClose.addEventListener('click', closeMobileMenu);
+
+    // Close menu when overlay is clicked
+    mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+
+    // Close menu when a nav link is clicked
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+    });
 }
-
-function closeMobileMenu() {
-    mobileMenu.classList.remove('active');
-    mobileMenuOverlay.classList.remove('active');
-    document.body.style.overflow = '';
-}
-
-// Open menu when button is clicked
-mobileMenuButton.addEventListener('click', openMobileMenu);
-
-// Close menu when close button is clicked
-mobileMenuClose.addEventListener('click', closeMobileMenu);
-
-// Close menu when overlay is clicked
-mobileMenuOverlay.addEventListener('click', closeMobileMenu);
-
-// Close menu when a nav link is clicked
-mobileNavLinks.forEach(link => {
-    link.addEventListener('click', closeMobileMenu);
-});
