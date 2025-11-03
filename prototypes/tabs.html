@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabbed Panel System | Demo</title>
+    <link rel="stylesheet" href="../tokens.css">
+    <link rel="stylesheet" href="tabs.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">← Back to Portfolio</a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="hero-section">
+            <h1>Tabbed Panel System</h1>
+            <p>A responsive, accessible tabbed interface component</p>
+        </section>
+
+        <section class="demo-section">
+            <div class="container">
+                <h2>Basic Tabs</h2>
+                <div class="tabs" role="tablist" aria-label="Content sections">
+                    <button class="tab active" role="tab" aria-selected="true" aria-controls="panel-overview" id="tab-overview">
+                        Overview
+                    </button>
+                    <button class="tab" role="tab" aria-selected="false" aria-controls="panel-features" id="tab-features">
+                        Features
+                    </button>
+                    <button class="tab" role="tab" aria-selected="false" aria-controls="panel-usage" id="tab-usage">
+                        Usage
+                    </button>
+                    <button class="tab" role="tab" aria-selected="false" aria-controls="panel-api" id="tab-api">
+                        API
+                    </button>
+                </div>
+
+                <div class="tab-panels">
+                    <div class="tab-panel active" role="tabpanel" id="panel-overview" aria-labelledby="tab-overview">
+                        <h3>Overview</h3>
+                        <p>This tabbed panel system is built with vanilla JavaScript and follows accessibility best practices. It uses ARIA attributes to ensure screen reader compatibility and keyboard navigation support.</p>
+                        <p>The component is fully responsive and adapts to different screen sizes. On mobile devices, tabs stack vertically for better usability.</p>
+                        <ul>
+                            <li>Semantic HTML structure</li>
+                            <li>Keyboard navigation (Arrow keys, Home, End)</li>
+                            <li>ARIA roles and attributes</li>
+                            <li>Smooth transitions</li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-panel" role="tabpanel" id="panel-features" aria-labelledby="tab-features" hidden>
+                        <h3>Features</h3>
+                        <div class="feature-grid">
+                            <div class="feature-card">
+                                <h4>♿ Accessible</h4>
+                                <p>Built with WCAG 2.1 AA compliance in mind. Full keyboard navigation and screen reader support.</p>
+                            </div>
+                            <div class="feature-card">
+                                <h4>📱 Responsive</h4>
+                                <p>Adapts seamlessly to all screen sizes, from desktop to mobile devices.</p>
+                            </div>
+                            <div class="feature-card">
+                                <h4>🎨 Customizable</h4>
+                                <p>Uses CSS custom properties for easy theming and customization.</p>
+                            </div>
+                            <div class="feature-card">
+                                <h4>⚡ Lightweight</h4>
+                                <p>No dependencies. Pure vanilla JavaScript with minimal footprint.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-panel" role="tabpanel" id="panel-usage" aria-labelledby="tab-usage" hidden>
+                        <h3>Usage</h3>
+                        <p>To use the tabbed panel system, follow this HTML structure:</p>
+                        <pre><code>&lt;div class="tabs" role="tablist"&gt;
+  &lt;button class="tab active" role="tab" aria-selected="true"&gt;
+    Tab 1
+  &lt;/button&gt;
+  &lt;button class="tab" role="tab" aria-selected="false"&gt;
+    Tab 2
+  &lt;/button&gt;
+&lt;/div&gt;
+
+&lt;div class="tab-panels"&gt;
+  &lt;div class="tab-panel active" role="tabpanel"&gt;
+    Content 1
+  &lt;/div&gt;
+  &lt;div class="tab-panel" role="tabpanel" hidden&gt;
+    Content 2
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        <p>The JavaScript will automatically handle the tab switching behavior and maintain accessibility attributes.</p>
+                    </div>
+
+                    <div class="tab-panel" role="tabpanel" id="panel-api" aria-labelledby="tab-api" hidden>
+                        <h3>API Reference</h3>
+                        <h4>Keyboard Navigation</h4>
+                        <table class="api-table">
+                            <thead>
+                                <tr>
+                                    <th>Key</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><kbd>Tab</kbd></td>
+                                    <td>Move focus into and out of tab list</td>
+                                </tr>
+                                <tr>
+                                    <td><kbd>→</kbd> / <kbd>←</kbd></td>
+                                    <td>Navigate between tabs</td>
+                                </tr>
+                                <tr>
+                                    <td><kbd>Home</kbd></td>
+                                    <td>Jump to first tab</td>
+                                </tr>
+                                <tr>
+                                    <td><kbd>End</kbd></td>
+                                    <td>Jump to last tab</td>
+                                </tr>
+                                <tr>
+                                    <td><kbd>Space</kbd> / <kbd>Enter</kbd></td>
+                                    <td>Activate focused tab</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="demo-section alternate">
+            <div class="container">
+                <h2>Icon Tabs</h2>
+                <div class="tabs icon-tabs" role="tablist" aria-label="Dashboard sections">
+                    <button class="tab active" role="tab" aria-selected="true" aria-controls="panel-dashboard" id="tab-dashboard">
+                        <span class="tab-icon">📊</span>
+                        <span>Dashboard</span>
+                    </button>
+                    <button class="tab" role="tab" aria-selected="false" aria-controls="panel-analytics" id="tab-analytics">
+                        <span class="tab-icon">📈</span>
+                        <span>Analytics</span>
+                    </button>
+                    <button class="tab" role="tab" aria-selected="false" aria-controls="panel-settings" id="tab-settings">
+                        <span class="tab-icon">⚙️</span>
+                        <span>Settings</span>
+                    </button>
+                </div>
+
+                <div class="tab-panels">
+                    <div class="tab-panel active" role="tabpanel" id="panel-dashboard" aria-labelledby="tab-dashboard">
+                        <h3>Dashboard</h3>
+                        <p>Welcome to your dashboard. Here you can see an overview of your key metrics and recent activity.</p>
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-value">2,847</div>
+                                <div class="stat-label">Total Users</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value">94.2%</div>
+                                <div class="stat-label">Success Rate</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value">1.2s</div>
+                                <div class="stat-label">Avg Response</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-panel" role="tabpanel" id="panel-analytics" aria-labelledby="tab-analytics" hidden>
+                        <h3>Analytics</h3>
+                        <p>Deep dive into your analytics data and trends over time.</p>
+                        <div class="chart-placeholder">
+                            <p>📊 Chart visualization would go here</p>
+                        </div>
+                    </div>
+
+                    <div class="tab-panel" role="tabpanel" id="panel-settings" aria-labelledby="tab-settings" hidden>
+                        <h3>Settings</h3>
+                        <p>Configure your preferences and account settings.</p>
+                        <div class="settings-list">
+                            <div class="setting-item">
+                                <label>Email Notifications</label>
+                                <input type="checkbox" checked>
+                            </div>
+                            <div class="setting-item">
+                                <label>Dark Mode</label>
+                                <input type="checkbox">
+                            </div>
+                            <div class="setting-item">
+                                <label>Auto-save</label>
+                                <input type="checkbox" checked>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Tabbed Panel Demo</p>
+        </div>
+    </footer>
+
+    <script src="tabs.js"></script>
+</body>
+</html>
