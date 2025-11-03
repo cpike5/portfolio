@@ -50,11 +50,26 @@ Then navigate to `http://localhost:8000` in your browser.
 
 ```
 .
-├── index.html      # Main HTML file with all sections
-├── styles.css      # Component styles and layouts
-├── tokens.css      # Design tokens (colors, typography, spacing)
-├── script.js       # JavaScript functionality
-└── README.md       # This file
+├── index.html              # Main HTML file (production version)
+├── styles.css              # Component styles and layouts
+├── tokens.css              # Design tokens (colors, typography, spacing)
+├── script.js               # JavaScript functionality
+├── deploy.sh               # Deployment script
+├── preview/                # Mobile-responsive version with additional features
+│   ├── index.html          # Mobile-responsive portfolio page
+│   ├── design-standards.html  # Design system documentation
+│   ├── blog/               # Blog prototype
+│   │   ├── index.html      # Blog listing page
+│   │   ├── post.html       # Blog post template
+│   │   ├── blog-styles.css # Blog-specific styles
+│   │   └── blog-script.js  # Blog functionality
+│   └── prototypes/         # UI component prototypes
+│       ├── login.html      # Login form prototype
+│       ├── register.html   # Registration form prototype
+│       ├── tabs.html       # Tabs component prototype
+│       └── *.css, *.js     # Prototype-specific assets
+├── infra/                  # Deployment configuration notes
+└── README.md               # This file
 ```
 
 ## Design System
@@ -94,6 +109,25 @@ Update section content directly in [index.html](index.html).
 
 ### Changing Behavior
 Modify JavaScript functionality in [script.js](script.js).
+
+## Deployment
+
+The project includes a deployment script ([deploy.sh](deploy.sh)) for automated deployment to a web server.
+
+**Usage:**
+```bash
+sudo ./deploy.sh
+```
+
+The script:
+1. Updates the local repository from git
+2. Copies portfolio files to the web directory
+3. Removes markdown files from the deployed version
+
+**Configuration:**
+Edit the script variables to match your environment:
+- `PORTFOLIO_DIR` - Local repository path
+- `WEB_DIR` - Web server document root
 
 ## Browser Support
 
