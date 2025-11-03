@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - cpike.ca</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../tokens.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="blog-styles.css">
+</head>
+<body>
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+        <button class="mobile-menu-button" aria-label="Menu" id="mobileMenuButton">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="menu-icon">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" />
+            </svg>
+        </button>
+        <div class="mobile-title">cpike.ca</div>
+    </header>
+
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    <nav class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <span class="mobile-menu-title">Menu</span>
+            <button class="mobile-menu-close" aria-label="Close menu" id="mobileMenuClose">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="close-icon">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="../index.html#home" class="mobile-nav-link">Home</a></li>
+            <li><a href="../index.html#about" class="mobile-nav-link">About</a></li>
+            <li><a href="../index.html#skills" class="mobile-nav-link">Skills</a></li>
+            <li><a href="../index.html#projects" class="mobile-nav-link">Projects</a></li>
+            <li><a href="../index.html#work" class="mobile-nav-link">Work</a></li>
+            <li><a href="../index.html#contact" class="mobile-nav-link">Contact</a></li>
+            <li><a href="index.html" class="mobile-nav-link active">Blog</a></li>
+            <li><a href="../design-standards.html" class="mobile-nav-link">Design Standards</a></li>
+        </ul>
+    </nav>
+
+    <!-- Desktop Navigation -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="../index.html#home">Home</a></li>
+            <li><a href="../index.html#about">About</a></li>
+            <li><a href="../index.html#skills">Skills</a></li>
+            <li><a href="../index.html#projects">Projects</a></li>
+            <li><a href="../index.html#work">Work</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+            <li><a href="index.html" class="active">Blog</a></li>
+            <li><a href="../design-standards.html">Design Standards</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <section class="blog-hero">
+            <div class="blog-hero-content">
+                <h1 class="blog-hero-title">Blog</h1>
+                <p class="blog-hero-description">Thoughts on development, technology, and continuous learning</p>
+            </div>
+        </section>
+
+        <section class="blog-list-section">
+            <div class="blog-list-content">
+                <!-- Filter/Sort Options -->
+                <div class="blog-filters">
+                    <div class="filter-group">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="development">Development</button>
+                        <button class="filter-btn" data-filter="cloud">Cloud</button>
+                        <button class="filter-btn" data-filter="learning">Learning</button>
+                    </div>
+                </div>
+
+                <!-- Blog Posts Grid -->
+                <div class="blog-grid">
+                    <!-- Example Blog Post 1 -->
+                    <article class="blog-card" data-category="development">
+                        <div class="blog-card-header">
+                            <time class="blog-date" datetime="2025-03-15">March 15, 2025</time>
+                            <span class="blog-category">Development</span>
+                        </div>
+                        <h2 class="blog-card-title">
+                            <a href="post.html">Modernizing Legacy ASP Applications to Blazor</a>
+                        </h2>
+                        <p class="blog-card-excerpt">
+                            A deep dive into the challenges and lessons learned from migrating classic ASP applications
+                            to modern Blazor WebAssembly. From planning to deployment, here's what worked and what didn't.
+                        </p>
+                        <div class="blog-card-footer">
+                            <span class="blog-read-time">8 min read</span>
+                            <a href="post.html" class="blog-read-more">Read more →</a>
+                        </div>
+                    </article>
+
+                    <!-- Example Blog Post 2 -->
+                    <article class="blog-card" data-category="cloud">
+                        <div class="blog-card-header">
+                            <time class="blog-date" datetime="2025-03-10">March 10, 2025</time>
+                            <span class="blog-category">Cloud</span>
+                        </div>
+                        <h2 class="blog-card-title">
+                            <a href="post.html">Azure Migration Strategies for Manufacturing</a>
+                        </h2>
+                        <p class="blog-card-excerpt">
+                            Real-world strategies for migrating manufacturing systems to Azure without disrupting
+                            24/7 production operations. Lessons from the trenches.
+                        </p>
+                        <div class="blog-card-footer">
+                            <span class="blog-read-time">6 min read</span>
+                            <a href="post.html" class="blog-read-more">Read more →</a>
+                        </div>
+                    </article>
+
+                    <!-- Example Blog Post 3 -->
+                    <article class="blog-card" data-category="development">
+                        <div class="blog-card-header">
+                            <time class="blog-date" datetime="2025-03-05">March 5, 2025</time>
+                            <span class="blog-category">Development</span>
+                        </div>
+                        <h2 class="blog-card-title">
+                            <a href="post.html">Building Resilient Manufacturing Integrations</a>
+                        </h2>
+                        <p class="blog-card-excerpt">
+                            How to build data integrations that can handle the demanding requirements of 24/7
+                            manufacturing environments. Patterns, practices, and hard-won lessons.
+                        </p>
+                        <div class="blog-card-footer">
+                            <span class="blog-read-time">10 min read</span>
+                            <a href="post.html" class="blog-read-more">Read more →</a>
+                        </div>
+                    </article>
+
+                    <!-- Example Blog Post 4 -->
+                    <article class="blog-card" data-category="learning">
+                        <div class="blog-card-header">
+                            <time class="blog-date" datetime="2025-02-28">February 28, 2025</time>
+                            <span class="blog-category">Learning</span>
+                        </div>
+                        <h2 class="blog-card-title">
+                            <a href="post.html">LLM-Assisted Development: A Practical Guide</a>
+                        </h2>
+                        <p class="blog-card-excerpt">
+                            Exploring how large language models can enhance the development workflow without
+                            replacing fundamental programming skills. My experience with Claude and beyond.
+                        </p>
+                        <div class="blog-card-footer">
+                            <span class="blog-read-time">12 min read</span>
+                            <a href="post.html" class="blog-read-more">Read more →</a>
+                        </div>
+                    </article>
+
+                    <!-- Example Blog Post 5 -->
+                    <article class="blog-card" data-category="development">
+                        <div class="blog-card-header">
+                            <time class="blog-date" datetime="2025-02-20">February 20, 2025</time>
+                            <span class="blog-category">Development</span>
+                        </div>
+                        <h2 class="blog-card-title">
+                            <a href="post.html">Implementing Effective APM with Elastic</a>
+                        </h2>
+                        <p class="blog-card-excerpt">
+                            A practical guide to setting up application performance monitoring with Elastic APM.
+                            From basic setup to advanced distributed tracing across microservices.
+                        </p>
+                        <div class="blog-card-footer">
+                            <span class="blog-read-time">7 min read</span>
+                            <a href="post.html" class="blog-read-more">Read more →</a>
+                        </div>
+                    </article>
+
+                    <!-- Example Blog Post 6 -->
+                    <article class="blog-card" data-category="cloud">
+                        <div class="blog-card-header">
+                            <time class="blog-date" datetime="2025-02-15">February 15, 2025</time>
+                            <span class="blog-category">Cloud</span>
+                        </div>
+                        <h2 class="blog-card-title">
+                            <a href="post.html">Cost Optimization in Azure for Small Teams</a>
+                        </h2>
+                        <p class="blog-card-excerpt">
+                            Practical strategies for keeping Azure costs under control when you're running
+                            multiple applications on a tight budget. Real numbers and actionable tips.
+                        </p>
+                        <div class="blog-card-footer">
+                            <span class="blog-read-time">5 min read</span>
+                            <a href="post.html" class="blog-read-more">Read more →</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p class="footer-text">© 2025 cpike</p>
+        <a href="https://github.com/cpike5" class="footer-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" aria-label="Back to top"></button>
+
+    <script src="../script.js"></script>
+    <script src="blog-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Standards | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="tokens.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--color-text);
+            background: var(--color-background);
+            min-height: 100vh;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 4rem var(--spacing-lg);
+            background: linear-gradient(135deg, rgba(183, 65, 254, 0.05) 0%, rgba(248, 114, 243, 0.05) 100%);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            color: var(--color-heading);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--color-text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-3xl) var(--spacing-lg);
+        }
+
+        .section {
+            margin-bottom: var(--spacing-3xl);
+        }
+
+        .section h2 {
+            color: var(--color-heading);
+            font-size: 2rem;
+            margin-bottom: var(--spacing-lg);
+            border-bottom: 2px solid var(--color-primary);
+            padding-bottom: var(--spacing-sm);
+        }
+
+        .section p {
+            color: var(--color-text);
+            margin-bottom: var(--spacing-lg);
+            line-height: 1.7;
+        }
+
+        /* Component Grid */
+        .component-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+
+        .component-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius-md);
+            padding: var(--spacing-lg);
+            transition: var(--transition-base);
+            text-decoration: none;
+            display: block;
+        }
+
+        .component-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--color-primary);
+        }
+
+        .component-card h3 {
+            color: var(--color-heading);
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .component-card p {
+            color: var(--color-text-light);
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        .component-icon {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-sm);
+            display: block;
+        }
+
+        /* Design Tokens */
+        .tokens-section {
+            margin-top: var(--spacing-xl);
+        }
+
+        .token-group {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius-md);
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .token-group h3 {
+            color: var(--color-heading);
+            margin-bottom: var(--spacing-md);
+            font-size: 1.25rem;
+        }
+
+        .token-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--spacing-sm);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .token-item:last-child {
+            border-bottom: none;
+        }
+
+        .token-name {
+            font-family: monospace;
+            color: var(--color-primary);
+        }
+
+        .token-value {
+            color: var(--color-text-light);
+            font-family: monospace;
+            font-size: 0.9rem;
+        }
+
+        .color-swatch {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--border-radius-sm);
+            border: 1px solid var(--color-border);
+            margin-left: var(--spacing-md);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(20, 23, 28, 0.95);
+            color: var(--color-text-light);
+            text-align: center;
+            padding: var(--spacing-lg);
+            margin-top: auto;
+            border-top: 1px solid var(--color-border);
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .component-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 3rem var(--spacing-md);
+            }
+
+            .container {
+                padding: var(--spacing-xl) var(--spacing-md);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+        <button class="mobile-menu-button" aria-label="Menu" id="mobileMenuButton">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="menu-icon">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" />
+            </svg>
+        </button>
+        <div class="mobile-title">cpike.ca</div>
+    </header>
+
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    <nav class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <span class="mobile-menu-title">Menu</span>
+            <button class="mobile-menu-close" aria-label="Close menu" id="mobileMenuClose">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="close-icon">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="index.html#home" class="mobile-nav-link">Home</a></li>
+            <li><a href="index.html#about" class="mobile-nav-link">About</a></li>
+            <li><a href="index.html#skills" class="mobile-nav-link">Skills</a></li>
+            <li><a href="index.html#projects" class="mobile-nav-link">Projects</a></li>
+            <li><a href="index.html#work" class="mobile-nav-link">Work</a></li>
+            <li><a href="index.html#contact" class="mobile-nav-link">Contact</a></li>
+            <li><a href="blog/index.html" class="mobile-nav-link">Blog</a></li>
+            <li><a href="design-standards.html" class="mobile-nav-link active">Design Standards</a></li>
+        </ul>
+    </nav>
+
+    <!-- Desktop Navigation -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#skills">Skills</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="index.html#work">Work</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="blog/index.html">Blog</a></li>
+            <li><a href="design-standards.html" class="active">Design Standards</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <h1>Design Standards</h1>
+        <p>Component library, design tokens, and interface patterns for consistent user experiences</p>
+    </div>
+
+    <main class="container">
+        <!-- Components Section -->
+        <section class="section">
+            <h2>Components & Prototypes</h2>
+            <p>Interactive UI components and page templates demonstrating design patterns and functionality.</p>
+
+            <div class="component-grid">
+                <a href="prototypes/tabs.html" class="component-card">
+                    <span class="component-icon">📑</span>
+                    <h3>Tabbed Panels</h3>
+                    <p>Accessible tabbed interface with keyboard navigation and responsive design. Includes basic and icon variations.</p>
+                </a>
+
+                <a href="prototypes/login.html" class="component-card">
+                    <span class="component-icon">🔐</span>
+                    <h3>Login</h3>
+                    <p>User authentication interface with form validation and error handling.</p>
+                </a>
+
+                <a href="prototypes/register.html" class="component-card">
+                    <span class="component-icon">📝</span>
+                    <h3>Registration</h3>
+                    <p>New user signup form with password strength indicators and validation.</p>
+                </a>
+
+                <a href="blog/index.html" class="component-card">
+                    <span class="component-icon">📰</span>
+                    <h3>Blog</h3>
+                    <p>Content management system with article listing, categories, and reading views.</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Design Tokens Section -->
+        <section class="section tokens-section">
+            <h2>Design Tokens</h2>
+            <p>Core design values that ensure visual consistency across all components and pages.</p>
+
+            <div class="token-group">
+                <h3>Colors</h3>
+                <div class="token-item">
+                    <span class="token-name">--color-primary</span>
+                    <div style="display: flex; align-items: center;">
+                        <span class="token-value">#b741fe</span>
+                        <div class="color-swatch" style="background: #b741fe;"></div>
+                    </div>
+                </div>
+                <div class="token-item">
+                    <span class="token-name">--color-primary-hover</span>
+                    <div style="display: flex; align-items: center;">
+                        <span class="token-value">#d680ff</span>
+                        <div class="color-swatch" style="background: #d680ff;"></div>
+                    </div>
+                </div>
+                <div class="token-item">
+                    <span class="token-name">--color-background</span>
+                    <div style="display: flex; align-items: center;">
+                        <span class="token-value">#232933</span>
+                        <div class="color-swatch" style="background: #232933;"></div>
+                    </div>
+                </div>
+                <div class="token-item">
+                    <span class="token-name">--color-surface</span>
+                    <div style="display: flex; align-items: center;">
+                        <span class="token-value">#2d3440</span>
+                        <div class="color-swatch" style="background: #2d3440;"></div>
+                    </div>
+                </div>
+                <div class="token-item">
+                    <span class="token-name">--color-text</span>
+                    <div style="display: flex; align-items: center;">
+                        <span class="token-value">#e0e0e0</span>
+                        <div class="color-swatch" style="background: #e0e0e0;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="token-group">
+                <h3>Typography</h3>
+                <div class="token-item">
+                    <span class="token-name">--font-family</span>
+                    <span class="token-value">Inter, Helvetica Neue, Helvetica, Arial, sans-serif</span>
+                </div>
+                <div class="token-item">
+                    <span class="token-name">--font-size-base</span>
+                    <span class="token-value">16px</span>
+                </div>
+            </div>
+
+            <div class="token-group">
+                <h3>Spacing Scale</h3>
+                <div class="token-item">
+                    <span class="token-name">--spacing-xs</span>
+                    <span class="token-value">0.5rem (8px)</span>
+                </div>
+                <div class="token-item">
+                    <span class="token-name">--spacing-sm</span>
+                    <span class="token-value">0.75rem (12px)</span>
+                </div>
+                <div class="token-item">
+                    <span class="token-name">--spacing-md</span>
+                    <span class="token-value">1rem (16px)</span>
+                </div>
+                <div class="token-item">
+                    <span class="token-name">--spacing-lg</span>
+                    <span class="token-value">1.5rem (24px)</span>
+                </div>
+                <div class="token-item">
+                    <span class="token-name">--spacing-xl</span>
+                    <span class="token-value">2rem (32px)</span>
+                </div>
+            </div>
+
+            <div class="token-group">
+                <h3>Border Radius</h3>
+                <div class="token-item">
+                    <span class="token-name">--border-radius-sm</span>
+                    <span class="token-value">4px</span>
+                </div>
+                <div class="token-item">
+                    <span class="token-name">--border-radius-md</span>
+                    <span class="token-value">8px</span>
+                </div>
+                <div class="token-item">
+                    <span class="token-name">--border-radius-lg</span>
+                    <span class="token-value">12px</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Design Standards</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
