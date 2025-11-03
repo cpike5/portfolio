@@ -1,6 +1,6 @@
 # Portfolio Website
 
-A minimalist personal portfolio website showcasing professional experience, skills, and projects. Built with vanilla HTML, CSS, and JavaScript for simplicity and performance.
+A minimalist personal portfolio website showcasing professional experience, skills, and projects. Built with vanilla HTML, CSS, and JavaScript.
 
 ## Features
 
