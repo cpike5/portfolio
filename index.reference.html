@@ -39,6 +39,8 @@
             <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
             <li><a href="#work" class="mobile-nav-link">Work</a></li>
             <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+            <li><a href="blog/index.html" class="mobile-nav-link">Blog</a></li>
+            <li><a href="design-standards.html" class="mobile-nav-link">Design Standards</a></li>
         </ul>
     </nav>
 
@@ -51,6 +53,8 @@
             <li><a href="#projects">Projects</a></li>
             <li><a href="#work">Work</a></li>
             <li><a href="#contact">Contact</a></li>
+            <li><a href="blog/index.html">Blog</a></li>
+            <li><a href="design-standards.html">Design Standards</a></li>
         </ul>
     </nav>
 
@@ -140,6 +144,19 @@
                         <div class="project-image-placeholder">
                             <span class="placeholder-text">Project Screenshot</span>
                         </div>
+                        <h3 class="project-title">Personal Site</h3>
+                        <p class="project-description">
+                            Personal web application with journal, finance tracker, and task management.
+                        </p>
+                        <a href="https://github.com/yourusername/repo" class="project-link" target="_blank" rel="noopener noreferrer">
+                            View on GitHub →
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image-placeholder">
+                            <span class="placeholder-text">Project Screenshot</span>
+                        </div>
                         <h3 class="project-title">Discord Bot Framework</h3>
                         <p class="project-description">
                             ASP.NET Core Discord bot framework with Discord.NET integration and a Blazor admin dashboard. Features secure user registration via Discord DMs, account linking, and multi-database support for extensible bot development.
@@ -219,8 +236,74 @@
         <section id="contact" class="contact-section fade-in">
             <div class="contact-content">
                 <h2 class="section-title">Contact</h2>
-                <div class="coming-soon">
-                    <p class="coming-soon-text">Feature coming soon</p>
+                <p class="contact-intro">
+                    Looking to get in touch? Send me a message.
+                </p>
+                <div class="form-message" id="formMessage" role="alert" aria-live="polite"></div>
+                <div class="form-wrapper">
+                    <form class="contact-form" id="contactForm" novalidate>
+                        <div class="form-group">
+                            <label for="name" class="form-label">Name</label>
+                            <input
+                                type="text"
+                                name="name"
+                                id="name"
+                                placeholder="Name"
+                                required
+                                autocomplete="name"
+                                class="form-input"
+                                aria-required="true"
+                                aria-invalid="false"
+                            >
+                            <span class="form-error" id="nameError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input
+                                type="email"
+                                name="email"
+                                id="email"
+                                placeholder="Email"
+                                required
+                                autocomplete="email"
+                                class="form-input"
+                                aria-required="true"
+                                aria-invalid="false"
+                            >
+                            <span class="form-error" id="emailError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea
+                                name="message"
+                                id="message"
+                                rows="6"
+                                placeholder="Message"
+                                required
+                                maxlength="500"
+                                class="form-input form-textarea"
+                                aria-required="true"
+                                aria-invalid="false"
+                            ></textarea>
+                            <div class="form-meta">
+                                <span class="form-error" id="messageError"></span>
+                                <span class="char-counter" id="charCounter">500 characters remaining</span>
+                            </div>
+                        </div>
+                        <button type="submit" class="form-submit" id="submitButton">
+                            <span class="submit-text">Send Message</span>
+                            <span class="submit-loader"></span>
+                        </button>
+                    </form>
+                    <div class="form-overlay" id="formOverlay">
+                        <div class="overlay-spinner"></div>
+                        <p class="overlay-text">Sending...</p>
+                    </div>
+                </div>
+                <div class="success-state" id="successState">
+                    <div class="success-icon">✓</div>
+                    <h3 class="success-title">Thank You!</h3>
+                    <p class="success-message">Your message has been sent successfully. I'll get back to you soon.</p>
                 </div>
             </div>
         </section>

@@ -737,6 +737,18 @@ body {
     font-weight: 400;
 }
 
+.coming-soon {
+    padding: 3rem 2rem;
+    margin-top: 2rem;
+}
+
+.coming-soon-text {
+    font-size: 1.25rem;
+    color: var(--color-text);
+    font-weight: 400;
+    opacity: 0.7;
+}
+
 .form-message {
     padding: 1rem 1.5rem;
     border-radius: 4px;
