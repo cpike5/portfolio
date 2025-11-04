@@ -95,6 +95,7 @@ Convert the static portfolio site to a dynamic Blazor Server application to enab
 - [ ] Email notification on new contact submission (optional)
 
 #### Could Have (Future)
+- [ ] **UI Showcase**: Interactive component library page demonstrating all UI components
 - [ ] Content management system for portfolio sections
 - [ ] Project image uploads
 - [ ] Blog functionality
@@ -246,6 +247,17 @@ Convert the static portfolio site to a dynamic Blazor Server application to enab
 - Deployment to production
 - Documentation updates
 
+### Phase 5: Future Enhancements (Post-Launch)
+- **UI Showcase**: Interactive component library demonstrating all UI components
+  - Component gallery with live examples
+  - Design system documentation
+  - Code samples and usage guidelines
+  - Accessibility demonstrations
+- Content management system
+- Blog functionality
+- Advanced analytics
+- Additional features as identified
+
 ---
 
 ## 10. Risks & Mitigation
@@ -264,10 +276,11 @@ Convert the static portfolio site to a dynamic Blazor Server application to enab
 ## 11. Appendix
 
 ### Related Documents
-- [User Stories](USER_STORIES.md)
-- [Technical Specifications](TECH_SPECS.md)
-- [Functional Specifications](FUNCTIONAL_SPECS.md)
-- [Implementation Plan](IMPLEMENTATION_PLAN.md)
+- [User Stories](user-stories.md)
+- [Technical Specifications](tech-specs.md)
+- [Functional Specifications](functional-specs.md)
+- [Implementation Plan](implementation-plan.md)
+- [UI Showcase Specification](ui-showcase-spec.md)
 
 ### Glossary
 - **Blazor Server**: ASP.NET Core framework for building interactive web UIs using C# instead of JavaScript

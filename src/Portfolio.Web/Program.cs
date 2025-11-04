@@ -1,9 +1,11 @@
 using Microsoft.AspNetCore.Components.Authorization;
+using Microsoft.AspNetCore.Components.Server.Circuits;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Portfolio.Web.Components;
 using Portfolio.Web.Components.Account;
 using Portfolio.Web.Data;
+using Portfolio.Web.Middleware;
 using Serilog;
 
 try
@@ -24,6 +26,9 @@ try
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+// Add circuit exception handler
+builder.Services.AddScoped<CircuitHandler, CircuitExceptionHandler>();
 
 builder.Services.AddCascadingAuthenticationState();
 builder.Services.AddScoped<IdentityUserAccessor>();
@@ -58,10 +63,15 @@ if (app.Environment.IsDevelopment())
 }
 else
 {
-    app.UseExceptionHandler("/Error", createScopeForErrors: true);
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
+// Add custom exception handling middleware
+app.UseMiddleware<ExceptionHandlingMiddleware>();
+
+// Use exception handler for unhandled exceptions (fallback)
+app.UseExceptionHandler("/Error");
 
 app.UseHttpsRedirection();
 

@@ -157,6 +157,43 @@ This document describes the functional behavior of the Portfolio Website Blazor 
 
 ---
 
+### 2.5 Visitor Journey - Exploring UI Showcase (Future)
+
+**Scenario:** Developer or visitor wants to see the design system and UI components
+
+**Steps:**
+1. Visitor clicks "UI Showcase" link in navigation
+2. Arrives at `/ui-showcase` page
+3. Sees page header: "UI Showcase" with description
+4. Views table of contents/jump links to component sections
+5. Scrolls through or clicks jump link to specific section
+6. **Design Tokens Section**:
+   - Views color palette with color swatches
+   - Sees hex values and usage descriptions
+   - Can copy hex values to clipboard
+   - Views typography scale with font sizes
+   - Views spacing scale visualization
+7. **Component Sections** (Buttons, Forms, etc.):
+   - Sees component title and description
+   - Views live interactive examples
+   - Interacts with components (clicks buttons, fills forms)
+   - Toggles code view to see Razor markup
+   - Copies code to clipboard using copy button
+8. **Navigation**:
+   - Uses sticky sidebar (desktop) to jump between sections
+   - Active section highlighted in sidebar
+   - Uses back to top button as needed
+9. Returns to main portfolio or explores more components
+
+**Expected Outcome:** Visitor gains understanding of the design system and available UI components
+
+**Alternative Flow (Developer Use Case):**
+- Developer studies component parameters and props
+- Developer copies code samples for reuse
+- Developer tests accessibility features (keyboard navigation)
+
+---
+
 ## 3. Feature Specifications
 
 ### 3.1 Navigation System
@@ -166,7 +203,7 @@ This document describes the functional behavior of the Portfolio Website Blazor 
 - **Behavior:**
   - Remains visible while scrolling
   - Semi-transparent background with purple gradient line below
-  - Links: Home, About, Skills, Projects, Work, Contact
+  - Links: Home, About, Skills, Projects, Work, Contact, UI Showcase
   - If admin logged in: additional "Admin" link appears
 - **Active State:**
   - Current section link is highlighted (lighter purple)
@@ -561,6 +598,120 @@ This document describes the functional behavior of the Portfolio Website Blazor 
 
 ---
 
+### 3.11 UI Showcase Page (Future Feature)
+
+#### Page Layout
+- **URL:** `/ui-showcase` (publicly accessible)
+- **Structure:**
+  - Header with title and description
+  - Sticky sidebar navigation (desktop only)
+  - Main content area with component sections
+  - Back to top button
+
+#### Header
+- **Title:** "UI Showcase"
+- **Subtitle:** "Interactive component library and design system reference"
+- **Breadcrumb:** Home > UI Showcase
+
+#### Sidebar Navigation (Desktop)
+- **Position:** Fixed left side (or right)
+- **Content:**
+  - Jump links to all component sections
+  - Grouped by category
+  - Active section highlighted
+- **Behavior:**
+  - Smooth scroll to section on click
+  - Auto-updates active state on scroll
+  - Collapses to hamburger on tablet/mobile
+
+#### Component Sections
+Each section includes:
+
+1. **Section Header:**
+   - Category title (e.g., "Buttons & Actions")
+   - Description paragraph
+
+2. **Component Demos:**
+   - Component title
+   - Description of purpose and use
+   - Live interactive preview
+   - Code sample (collapsible)
+   - Copy button for code
+
+#### Design Tokens Section
+- **Color Palette:**
+  - Large color swatches
+  - Hex color codes
+  - Color names and usage descriptions
+  - Copy hex button
+  - Contrast ratios displayed
+
+- **Typography Scale:**
+  - Each font size displayed with sample text
+  - Font family, size, weight, line height shown
+  - Usage guidelines
+
+- **Spacing Scale:**
+  - Visual representation of spacing units
+  - Pixel and rem values
+  - Usage examples
+
+#### Interactive Component Examples
+
+**Buttons:**
+- All variants: Primary, Outline, Text
+- All states: Default, Hover, Active, Disabled, Loading
+- Click interactions functional
+
+**Forms:**
+- Text inputs with validation states
+- Textareas with character counters
+- Checkboxes and radio buttons
+- Select dropdowns
+- Error messages visible
+- Success states shown
+
+**Modals:**
+- Open/close buttons functional
+- Modal backdrop
+- Multiple modal types demonstrated
+- Close on backdrop click
+- Close on Escape key
+
+**Tabs:**
+- Tab switching functional
+- Active state visible
+- Keyboard navigation (arrow keys)
+
+**Alerts:**
+- All variants: Success, Error, Warning, Info
+- Dismissible alerts
+- Alert icons
+
+#### Code Display
+- **Syntax Highlighting:** Basic or library-based
+- **Copy Button:** One-click copy to clipboard
+- **Code Format:** Properly formatted Razor markup
+- **Language Label:** "Razor" or "C#" tag
+
+#### Responsive Behavior
+- **Desktop (> 768px):**
+  - Sidebar visible
+  - Two-column layouts where appropriate
+  - Larger code blocks
+
+- **Tablet (481-768px):**
+  - Sidebar collapses
+  - Single column
+  - Touch-friendly
+
+- **Mobile (≤ 480px):**
+  - Hamburger menu for navigation
+  - Stacked layouts
+  - Smaller, scrollable code blocks
+
+---
+
 ## 4. UI/UX Requirements
 
 ### 4.1 Visual Design Consistency
@@ -915,6 +1066,18 @@ All errors logged with Serilog:
 - [ ] Smooth 60fps animations
 - [ ] Form submission completes in under 1 second
 
+### UI Showcase (Future)
+
+- [ ] UI Showcase page accessible at /ui-showcase
+- [ ] All component sections display correctly
+- [ ] Component demos are interactive
+- [ ] Code samples accurate and copyable
+- [ ] Sidebar navigation works (desktop)
+- [ ] Mobile navigation works
+- [ ] Design tokens section complete
+- [ ] Responsive on all devices
+- [ ] Copy to clipboard functionality works
+
 ---
 
 **Document Version History**
@@ -922,3 +1085,4 @@ All errors logged with Serilog:
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
 | 1.0 | 2025-11-03 | cpike | Initial functional specifications |
+| 1.1 | 2025-11-04 | cpike | Added UI Showcase feature workflows and specifications |
