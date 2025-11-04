@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillsGrid Component - cpike.ca</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../tokens.css">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="components.css">
+</head>
+<body>
+    <!-- Desktop Navigation -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="index.html">Components</a></li>
+            <li><a href="skills-grid.html" class="active">SkillsGrid</a></li>
+        </ul>
+    </nav>
+
+    <main class="showcase-container">
+        <!-- Component Header -->
+        <section class="component-section">
+            <div class="component-header">
+                <h1 class="component-name">SkillsGrid</h1>
+                <p class="component-description">
+                    Responsive grid layout for displaying skills organized into groups.
+                    Auto-fit columns adapt from 4 columns on desktop to 2 on mobile.
+                </p>
+                <div class="component-meta">
+                    <span class="phase-badge phase-2">Phase 2</span>
+                    <span class="component-tag">Layout</span>
+                    <span class="component-tag">Grid</span>
+                </div>
+            </div>
+
+            <!-- Live Demo -->
+            <div class="demo-container">
+                <h2 class="demo-title">Complete Skills Grid</h2>
+                <div class="demo-item">
+                    <div class="skill-group">
+                        <h3 class="skill-group-title">Core Technologies</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">C#</div>
+                            <div class="skill-item">JavaScript</div>
+                            <div class="skill-item">SQL</div>
+                            <div class="skill-item">HTML/CSS</div>
+                            <div class="skill-item">.NET Core</div>
+                            <div class="skill-item">Blazor</div>
+                            <div class="skill-item">ASP.NET</div>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <h3 class="skill-group-title">Tools & Monitoring</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">Elastic APM</div>
+                            <div class="skill-item">Serilog</div>
+                            <div class="skill-item">Azure DevOps</div>
+                            <div class="skill-item">CI/CD</div>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <h3 class="skill-group-title">Infrastructure</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">Azure</div>
+                            <div class="skill-item">SQL Server</div>
+                            <div class="skill-item">Elasticsearch</div>
+                            <div class="skill-item">ERP Integration</div>
+                            <div class="skill-item">Manufacturing Systems</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grid Variants -->
+            <div class="demo-container">
+                <h2 class="demo-title">Grid Size Variants</h2>
+                <div class="demo-grid">
+                    <div class="demo-item">
+                        <p class="demo-label">Small Group (4 items)</p>
+                        <div class="skills-grid">
+                            <div class="skill-item">C#</div>
+                            <div class="skill-item">JavaScript</div>
+                            <div class="skill-item">Python</div>
+                            <div class="skill-item">TypeScript</div>
+                        </div>
+                    </div>
+
+                    <div class="demo-item">
+                        <p class="demo-label">Medium Group (8 items)</p>
+                        <div class="skills-grid">
+                            <div class="skill-item">React</div>
+                            <div class="skill-item">Vue</div>
+                            <div class="skill-item">Angular</div>
+                            <div class="skill-item">Svelte</div>
+                            <div class="skill-item">Next.js</div>
+                            <div class="skill-item">Nuxt</div>
+                            <div class="skill-item">Gatsby</div>
+                            <div class="skill-item">Remix</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single Group -->
+            <div class="demo-container">
+                <h2 class="demo-title">Single Group</h2>
+                <div class="demo-item">
+                    <div class="skill-group">
+                        <h3 class="skill-group-title">Frontend Frameworks</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">React</div>
+                            <div class="skill-item">Vue.js</div>
+                            <div class="skill-item">Angular</div>
+                            <div class="skill-item">Blazor</div>
+                            <div class="skill-item">Svelte</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Preview -->
+            <div class="demo-container">
+                <h2 class="demo-title">Mobile Layout (2 columns)</h2>
+                <div class="demo-item" style="max-width: 400px; margin: 0 auto;">
+                    <div class="skill-group">
+                        <h3 class="skill-group-title">Languages</h3>
+                        <div class="skills-grid" style="grid-template-columns: repeat(2, 1fr);">
+                            <div class="skill-item">C#</div>
+                            <div class="skill-item">JavaScript</div>
+                            <div class="skill-item">Python</div>
+                            <div class="skill-item">Go</div>
+                            <div class="skill-item">Rust</div>
+                            <div class="skill-item">TypeScript</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Code Example -->
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-title">HTML Structure</span>
+                </div>
+                <pre class="code-content">&lt;div class="skill-group"&gt;
+    &lt;h3 class="skill-group-title"&gt;Core Technologies&lt;/h3&gt;
+    &lt;div class="skills-grid"&gt;
+        &lt;div class="skill-item"&gt;C#&lt;/div&gt;
+        &lt;div class="skill-item"&gt;JavaScript&lt;/div&gt;
+        &lt;div class="skill-item"&gt;SQL&lt;/div&gt;
+        &lt;div class="skill-item"&gt;HTML/CSS&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="skill-group"&gt;
+    &lt;h3 class="skill-group-title"&gt;Infrastructure&lt;/h3&gt;
+    &lt;div class="skills-grid"&gt;
+        &lt;div class="skill-item"&gt;Azure&lt;/div&gt;
+        &lt;div class="skill-item"&gt;SQL Server&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+            </div>
+
+            <!-- CSS Reference -->
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-title">CSS Classes & Styling</span>
+                </div>
+                <pre class="code-content">Classes:
+  .skill-group         - Group container
+  .skill-group-title   - Group heading
+  .skills-grid         - Grid container
+  .skill-item          - Individual skill card
+
+Grid Layout:
+  • Display: grid
+  • Template: repeat(auto-fit, minmax(140px, 1fr))
+  • Gap: 1rem
+  • Max-width: 800px (centered)
+
+Skill Item:
+  • Flexbox centered
+  • Padding: 1rem 1.5rem
+  • Border: 1px solid rgba(183, 65, 254, 0.2)
+  • Border-radius: 8px
+  • Background: gradient (primary with low opacity)
+  • Top accent: 2px gradient line
+  • Font-size: 0.95rem
+
+Hover Effects:
+  • Border color: solid primary
+  • Background: intensified gradient
+  • Transform: translateY(-3px)
+  • Top accent opacity: 0.6
+
+Group Styling:
+  • Margin-bottom: 3rem (last: 0)
+  • Title: small-caps, primary color
+  • Title margin-bottom: 1.5rem
+
+Responsive:
+  • Desktop: auto-fit (typically 4-5 columns)
+  • Tablet (≤768px): 2 columns
+  • Mobile (≤480px): 2 columns
+  • Reduced padding and gaps
+
+Styling Reference:
+  styles.css:436-502</pre>
+            </div>
+
+            <!-- Props/Attributes -->
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-title">Blazor Component Props</span>
+                </div>
+                <pre class="code-content">Proposed Props:
+
+SkillGroups (List&lt;SkillGroup&gt;) [Required]
+  - Collection of skill groups
+
+SkillGroup Model:
+  - Title: string (group name)
+  - Skills: List&lt;string&gt; (skill names)
+
+MaxWidth (string)
+  - Grid max-width (default: "800px")
+
+Columns (int)
+  - Desktop columns (default: auto-fit)
+
+MobileColumns (int)
+  - Mobile columns (default: 2)
+
+CssClass (string)
+  - Additional CSS classes</pre>
+            </div>
+
+            <!-- Implementation Notes -->
+            <div class="demo-container">
+                <h2 class="demo-title">Implementation Notes</h2>
+                <div class="code-content" style="white-space: normal; line-height: 1.8;">
+                    <strong style="color: var(--color-primary);">Grid Behavior:</strong><br>
+                    • Auto-fit adjusts columns based on available space<br>
+                    • Minimum column width: 140px<br>
+                    • Expands to fill available space (1fr)<br>
+                    • Responsive without media queries (for column count)<br><br>
+
+                    <strong style="color: var(--color-primary);">Spacing:</strong><br>
+                    • Grid gap: 1rem<br>
+                    • Group margin-bottom: 3rem<br>
+                    • Title margin-bottom: 1.5rem<br>
+                    • Reduces on mobile for tighter layout<br><br>
+
+                    <strong style="color: var(--color-primary);">Interaction:</strong><br>
+                    • Hover lift effect on skill items<br>
+                    • Top gradient accent appears<br>
+                    • Border color intensifies<br>
+                    • Smooth 0.3s transitions<br><br>
+
+                    <strong style="color: var(--color-primary);">Content Organization:</strong><br>
+                    • Group related skills together<br>
+                    • Use descriptive group titles<br>
+                    • Order groups by importance<br>
+                    • Keep skill names concise<br><br>
+
+                    <strong style="color: var(--color-primary);">Accessibility:</strong><br>
+                    • Semantic heading hierarchy (h3)<br>
+                    • Logical reading order<br>
+                    • Sufficient color contrast<br>
+                    • Clear visual grouping
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p class="footer-text">© 2025 cpike</p>
+        <a href="index.html" class="footer-link">← Back to Components</a>
+    </footer>
+</body>
+</html>

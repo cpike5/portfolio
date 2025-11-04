@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Component - cpike.ca</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../tokens.css">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="components.css">
+    <style>
+        .demo-button-trigger {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Desktop Navigation -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="index.html">Components</a></li>
+            <li><a href="button.html" class="active">Button</a></li>
+        </ul>
+    </nav>
+
+    <main class="showcase-container">
+        <!-- Component Header -->
+        <section class="component-section">
+            <div class="component-header">
+                <h1 class="component-name">Button</h1>
+                <p class="component-description">
+                    Primary button component with outlined style, hover fill effect, and loading/disabled states.
+                    Uses small-caps typography and smooth transitions.
+                </p>
+                <div class="component-meta">
+                    <span class="phase-badge phase-2">Phase 2</span>
+                    <span class="component-tag">Interactive</span>
+                    <span class="component-tag">Form</span>
+                </div>
+            </div>
+
+            <!-- Live Demo -->
+            <div class="demo-container">
+                <h2 class="demo-title">Default Button</h2>
+                <div class="demo-item" style="text-align: center;">
+                    <button type="button" class="form-submit">
+                        <span class="submit-text">Submit</span>
+                        <span class="submit-loader"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Button States -->
+            <div class="demo-container">
+                <h2 class="demo-title">Button States</h2>
+                <div class="variant-showcase">
+                    <div class="variant-item">
+                        <button type="button" class="form-submit">
+                            <span class="submit-text">Default</span>
+                            <span class="submit-loader"></span>
+                        </button>
+                        <p class="variant-label">Default State</p>
+                    </div>
+
+                    <div class="variant-item">
+                        <button type="button" class="form-submit" style="background-color: var(--color-primary); color: var(--color-background);">
+                            <span class="submit-text">Hover</span>
+                            <span class="submit-loader"></span>
+                        </button>
+                        <p class="variant-label">Hover State (simulated)</p>
+                    </div>
+
+                    <div class="variant-item">
+                        <button type="button" class="form-submit loading" id="loadingButton">
+                            <span class="submit-text">Loading</span>
+                            <span class="submit-loader"></span>
+                        </button>
+                        <p class="variant-label">Loading State</p>
+                    </div>
+
+                    <div class="variant-item">
+                        <button type="button" class="form-submit" disabled>
+                            <span class="submit-text">Disabled</span>
+                            <span class="submit-loader"></span>
+                        </button>
+                        <p class="variant-label">Disabled State</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Button Text Variants -->
+            <div class="demo-container">
+                <h2 class="demo-title">Text Variants</h2>
+                <div class="variant-showcase">
+                    <div class="variant-item">
+                        <button type="button" class="form-submit">
+                            <span class="submit-text">Submit</span>
+                            <span class="submit-loader"></span>
+                        </button>
+                    </div>
+
+                    <div class="variant-item">
+                        <button type="button" class="form-submit">
+                            <span class="submit-text">Send Message</span>
+                            <span class="submit-loader"></span>
+                        </button>
+                    </div>
+
+                    <div class="variant-item">
+                        <button type="button" class="form-submit">
+                            <span class="submit-text">Continue</span>
+                            <span class="submit-loader"></span>
+                        </button>
+                    </div>
+
+                    <div class="variant-item">
+                        <button type="button" class="form-submit">
+                            <span class="submit-text">Get Started</span>
+                            <span class="submit-loader"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Demo -->
+            <div class="demo-container">
+                <h2 class="demo-title">Interactive Demo</h2>
+                <div class="demo-item" style="text-align: center;">
+                    <button type="button" class="form-submit demo-button-trigger" id="demoButton">
+                        <span class="submit-text">Click to Load</span>
+                        <span class="submit-loader"></span>
+                    </button>
+                    <p style="margin-top: 1.5rem; color: var(--color-text); font-size: 0.9rem;">
+                        Click to simulate loading state
+                    </p>
+                </div>
+            </div>
+
+            <!-- Code Example -->
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-title">HTML Structure</span>
+                </div>
+                <pre class="code-content">&lt;!-- Default Button --&gt;
+&lt;button type="submit" class="form-submit"&gt;
+    &lt;span class="submit-text"&gt;Submit&lt;/span&gt;
+    &lt;span class="submit-loader"&gt;&lt;/span&gt;
+&lt;/button&gt;
+
+&lt;!-- Loading State --&gt;
+&lt;button type="submit" class="form-submit loading"&gt;
+    &lt;span class="submit-text"&gt;Submit&lt;/span&gt;
+    &lt;span class="submit-loader"&gt;&lt;/span&gt;
+&lt;/button&gt;
+
+&lt;!-- Disabled State --&gt;
+&lt;button type="submit" class="form-submit" disabled&gt;
+    &lt;span class="submit-text"&gt;Submit&lt;/span&gt;
+    &lt;span class="submit-loader"&gt;&lt;/span&gt;
+&lt;/button&gt;</pre>
+            </div>
+
+            <!-- CSS Reference -->
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-title">CSS Classes & Styling</span>
+                </div>
+                <pre class="code-content">Classes:
+  .form-submit     - Button base styling
+  .submit-text     - Button text (hidden when loading)
+  .submit-loader   - Loading spinner (shown when loading)
+  .loading         - Loading state modifier
+
+Button Styling:
+  • Padding: 1rem 2.5rem
+  • Background: transparent
+  • Border: 2px solid var(--color-primary)
+  • Border-radius: 4px
+  • Color: var(--color-primary)
+  • Font-variant: small-caps
+  • Letter-spacing: 0.05em
+  • Min-width: 200px
+  • Position: relative
+
+Hover State:
+  • Background: var(--color-primary)
+  • Color: var(--color-background)
+  • Transform: translateY(-2px)
+
+Loading State:
+  • .submit-text opacity: 0
+  • .submit-loader display: block
+  • Spinner animation: 0.8s linear infinite
+  • No hover effects
+
+Disabled State:
+  • Opacity: 0.6
+  • Cursor: not-allowed
+  • No hover effects
+
+Styling Reference:
+  styles.css:904-974</pre>
+            </div>
+
+            <!-- JavaScript -->
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-title">JavaScript (Loading State)</span>
+                </div>
+                <pre class="code-content">// Add loading state
+button.classList.add('loading');
+button.disabled = true;
+
+// Remove loading state
+button.classList.remove('loading');
+button.disabled = false;</pre>
+            </div>
+
+            <!-- Props/Attributes -->
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-title">Blazor Component Props</span>
+                </div>
+                <pre class="code-content">Proposed Props:
+
+Text (string) [Required]
+  - Button text content
+
+Type (string)
+  - "button" | "submit" (default: "button")
+
+IsLoading (bool)
+  - Show loading spinner
+
+IsDisabled (bool)
+  - Disabled state
+
+CssClass (string)
+  - Additional CSS classes
+
+OnClick (EventCallback)
+  - Click event handler</pre>
+            </div>
+
+            <!-- Implementation Notes -->
+            <div class="demo-container">
+                <h2 class="demo-title">Implementation Notes</h2>
+                <div class="code-content" style="white-space: normal; line-height: 1.8;">
+                    <strong style="color: var(--color-primary);">Design Pattern:</strong><br>
+                    • Outlined style (transparent background, border)<br>
+                    • Fills on hover for visual feedback<br>
+                    • Small-caps for consistent typography<br>
+                    • Loading spinner replaces text<br><br>
+
+                    <strong style="color: var(--color-primary);">Animation:</strong><br>
+                    • Hover lift: translateY(-2px)<br>
+                    • Active press: translateY(0)<br>
+                    • Spinner rotation: 360deg in 0.8s<br>
+                    • All transitions: 0.3s ease<br><br>
+
+                    <strong style="color: var(--color-primary);">States:</strong><br>
+                    • Default: outlined with primary border<br>
+                    • Hover: filled with primary color<br>
+                    • Loading: spinner visible, text hidden, no hover<br>
+                    • Disabled: reduced opacity, no interaction<br><br>
+
+                    <strong style="color: var(--color-primary);">Accessibility:</strong><br>
+                    • Proper button element<br>
+                    • Type attribute (button/submit)<br>
+                    • Disabled attribute for disabled state<br>
+                    • Focus states visible<br>
+                    • ARIA attributes for loading state
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p class="footer-text">© 2025 cpike</p>
+        <a href="index.html" class="footer-link">← Back to Components</a>
+    </footer>
+
+    <script>
+        // Interactive demo
+        const demoButton = document.getElementById('demoButton');
+        if (demoButton) {
+            demoButton.addEventListener('click', () => {
+                demoButton.classList.add('loading');
+                demoButton.disabled = true;
+
+                setTimeout(() => {
+                    demoButton.classList.remove('loading');
+                    demoButton.disabled = false;
+                }, 3000);
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoadingSpinner Component - cpike.ca</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../tokens.css">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="components.css">
+</head>
+<body>
+    <!-- Desktop Navigation -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="index.html">Components</a></li>
+            <li><a href="loading-spinner.html" class="active">LoadingSpinner</a></li>
+        </ul>
+    </nav>
+
+    <main class="showcase-container">
+        <!-- Component Header -->
+        <section class="component-section">
+            <div class="component-header">
+                <h1 class="component-name">LoadingSpinner</h1>
+                <p class="component-description">
+                    Animated circular loading indicator with configurable sizes. Used in buttons,
+                    overlays, and loading states throughout the application.
+                </p>
+                <div class="component-meta">
+                    <span class="phase-badge phase-3">Phase 3</span>
+                    <span class="component-tag">Feedback</span>
+                    <span class="component-tag">Loading</span>
+                </div>
+            </div>
+
+            <!-- Live Demo -->
+            <div class="demo-container">
+                <h2 class="demo-title">Default Spinner</h2>
+                <div class="demo-item" style="text-align: center; padding: 3rem;">
+                    <div class="submit-loader" style="display: inline-block; position: relative; transform: none; margin: 0;"></div>
+                </div>
+            </div>
+
+            <!-- Size Variants -->
+            <div class="demo-container">
+                <h2 class="demo-title">Size Variants</h2>
+                <div class="variant-showcase">
+                    <div class="variant-item">
+                        <div class="submit-loader" style="display: inline-block; position: relative; transform: none; width: 12px; height: 12px; border-width: 1.5px;"></div>
+                        <p class="variant-label">Small (12px)</p>
+                    </div>
+
+                    <div class="variant-item">
+                        <div class="submit-loader" style="display: inline-block; position: relative; transform: none;"></div>
+                        <p class="variant-label">Medium (16px - default)</p>
+                    </div>
+
+                    <div class="variant-item">
+                        <div class="submit-loader" style="display: inline-block; position: relative; transform: none; width: 24px; height: 24px; border-width: 3px;"></div>
+                        <p class="variant-label">Large (24px)</p>
+                    </div>
+
+                    <div class="variant-item">
+                        <div class="overlay-spinner"></div>
+                        <p class="variant-label">Extra Large (48px)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- In Context -->
+            <div class="demo-container">
+                <h2 class="demo-title">In Button Context</h2>
+                <div class="variant-showcase">
+                    <div class="variant-item">
+                        <button class="form-submit loading">
+                            <span class="submit-text">Submit</span>
+                            <span class="submit-loader"></span>
+                        </button>
+                        <p class="variant-label">Loading Button</p>
+                    </div>
+
+                    <div class="variant-item">
+                        <button class="form-submit">
+                            <span class="submit-text">Submit</span>
+                            <span class="submit-loader"></span>
+                        </button>
+                        <p class="variant-label">Default Button</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Overlay Spinner -->
+            <div class="demo-container">
+                <h2 class="demo-title">Overlay Spinner (Large)</h2>
+                <div class="demo-item" style="text-align: center; padding: 4rem; position: relative;">
+                    <div class="overlay-spinner"></div>
+                    <p style="margin-top: 3rem; color: var(--color-text); font-size: 0.9rem;">
+                        Used in form overlays and full-page loading states
+                    </p>
+                </div>
+            </div>
+
+            <!-- Color Variants -->
+            <div class="demo-container">
+                <h2 class="demo-title">Color Variants</h2>
+                <div class="variant-showcase">
+                    <div class="variant-item" style="background: rgba(183, 65, 254, 0.1); padding: 2rem;">
+                        <div class="submit-loader" style="display: inline-block; position: relative; transform: none;"></div>
+                        <p class="variant-label">Primary Color</p>
+                    </div>
+
+                    <div class="variant-item" style="background: var(--color-background); padding: 2rem;">
+                        <div class="submit-loader" style="display: inline-block; position: relative; transform: none; border-color: rgba(255, 255, 255, 0.2); border-top-color: var(--color-text);"></div>
+                        <p class="variant-label">Light Color</p>
+                    </div>
+
+                    <div class="variant-item" style="background: rgba(35, 41, 51, 0.8); padding: 2rem;">
+                        <div class="overlay-spinner" style="border-color: rgba(183, 65, 254, 0.2); border-top-color: var(--color-primary);"></div>
+                        <p class="variant-label">Overlay Color</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Code Example -->
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-title">HTML Structure</span>
+                </div>
+                <pre class="code-content">&lt;!-- Button Spinner (small) --&gt;
+&lt;span class="submit-loader"&gt;&lt;/span&gt;
+
+&lt;!-- Overlay Spinner (large) --&gt;
+&lt;div class="overlay-spinner"&gt;&lt;/div&gt;
+
+&lt;!-- In Button Context --&gt;
+&lt;button class="form-submit loading"&gt;
+    &lt;span class="submit-text"&gt;Submit&lt;/span&gt;
+    &lt;span class="submit-loader"&gt;&lt;/span&gt;
+&lt;/button&gt;</pre>
+            </div>
+
+            <!-- CSS Reference -->
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-title">CSS Classes & Styling</span>
+                </div>
+                <pre class="code-content">Classes:
+  .submit-loader      - Small spinner (16px) for buttons
+  .overlay-spinner    - Large spinner (48px) for overlays
+
+Button Spinner (.submit-loader):
+  • Display: none (shown when button has .loading)
+  • Width: 16px
+  • Height: 16px
+  • Border: 2px solid transparent
+  • Border-top-color: var(--color-primary)
+  • Border-radius: 50%
+  • Animation: spin 0.8s linear infinite
+  • Position: absolute, centered (top 50%, left 50%)
+
+Overlay Spinner (.overlay-spinner):
+  • Width: 48px
+  • Height: 48px
+  • Border: 3px solid rgba(183, 65, 254, 0.2)
+  • Border-top-color: var(--color-primary)
+  • Border-radius: 50%
+  • Animation: overlaySpinAnimation 0.8s linear infinite
+
+Spin Animation:
+  @keyframes spin {
+    to {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+
+  @keyframes overlaySpinAnimation {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+Button Loading State:
+  .form-submit.loading .submit-text {
+    opacity: 0;
+  }
+
+  .form-submit.loading .submit-loader {
+    display: block;
+  }
+
+Styling Reference:
+  styles.css:942-974 (button spinner)
+  styles.css:1001-1014 (overlay spinner)</pre>
+            </div>
+
+            <!-- Props/Attributes -->
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-title">Blazor Component Props</span>
+                </div>
+                <pre class="code-content">Proposed Props:
+
+Size (string)
+  - "sm" | "md" | "lg" | "xl"
+  - sm: 12px, md: 16px, lg: 24px, xl: 48px
+
+Color (string)
+  - Spinner color (default: var(--color-primary))
+
+BorderWidth (string)
+  - Border thickness (default: "2px" for sm/md, "3px" for lg/xl)
+
+CssClass (string)
+  - Additional CSS classes
+
+AriaLabel (string)
+  - Accessibility label (default: "Loading...")</pre>
+            </div>
+
+            <!-- Implementation Notes -->
+            <div class="demo-container">
+                <h2 class="demo-title">Implementation Notes</h2>
+                <div class="code-content" style="white-space: normal; line-height: 1.8;">
+                    <strong style="color: var(--color-primary);">Animation:</strong><br>
+                    • 360-degree rotation<br>
+                    • Linear timing (constant speed)<br>
+                    • 0.8-second duration<br>
+                    • Infinite loop<br><br>
+
+                    <strong style="color: var(--color-primary);">Design:</strong><br>
+                    • Circular border with transparent sections<br>
+                    • Only top border visible (creates arc)<br>
+                    • Rotation creates spinning effect<br>
+                    • Smooth, GPU-accelerated animation<br><br>
+
+                    <strong style="color: var(--color-primary);">Usage Contexts:</strong><br>
+                    • Button spinners: 16px, hidden by default<br>
+                    • Overlay spinners: 48px, shown during async ops<br>
+                    • Inline spinners: 24px, for in-content loading<br>
+                    • Custom sizes as needed<br><br>
+
+                    <strong style="color: var(--color-primary);">Color Customization:</strong><br>
+                    • Border-top-color controls visible arc<br>
+                    • Border-color controls track (usually transparent or subtle)<br>
+                    • Match to primary color for consistency<br>
+                    • Adjust contrast for different backgrounds<br><br>
+
+                    <strong style="color: var(--color-primary);">Accessibility:</strong><br>
+                    • Add aria-label for context<br>
+                    • Announce loading state to screen readers<br>
+                    • Pair with text labels when possible<br>
+                    • Don't rely solely on spinner for feedback<br><br>
+
+                    <strong style="color: var(--color-primary);">Performance:</strong><br>
+                    • Use transform for animation (GPU-accelerated)<br>
+                    • Avoid animating layout properties<br>
+                    • Remove from DOM when not needed<br>
+                    • Consider reducing motion preference
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p class="footer-text">© 2025 cpike</p>
+        <a href="index.html" class="footer-link">← Back to Components</a>
+    </footer>
+</body>
+</html>

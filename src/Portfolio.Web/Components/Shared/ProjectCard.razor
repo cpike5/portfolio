@@ -1,0 +1,22 @@
+<div class="project-card">
+    <img src="@ImageUrl" alt="@Title screenshot" class="project-image">
+    <h3 class="project-title">@Title</h3>
+    <p class="project-description">@Description</p>
+    <a href="@Link" class="project-link" target="_blank" rel="noopener noreferrer">
+        View on GitHub →
+    </a>
+</div>
+
+@code {
+    [Parameter, EditorRequired]
+    public string Title { get; set; } = string.Empty;
+
+    [Parameter, EditorRequired]
+    public string Description { get; set; } = string.Empty;
+
+    [Parameter, EditorRequired]
+    public string Link { get; set; } = string.Empty;
+
+    [Parameter, EditorRequired]
+    public string ImageUrl { get; set; } = string.Empty;
+}

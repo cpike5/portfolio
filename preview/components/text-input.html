@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TextInput Component - cpike.ca</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../tokens.css">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="components.css">
+</head>
+<body>
+    <!-- Desktop Navigation -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="index.html">Components</a></li>
+            <li><a href="text-input.html" class="active">TextInput</a></li>
+        </ul>
+    </nav>
+
+    <main class="showcase-container">
+        <!-- Component Header -->
+        <section class="component-section">
+            <div class="component-header">
+                <h1 class="component-name">TextInput</h1>
+                <p class="component-description">
+                    Form input component with label, validation states, and error messages.
+                    Supports text and email input types with real-time validation feedback.
+                </p>
+                <div class="component-meta">
+                    <span class="phase-badge phase-3">Phase 3</span>
+                    <span class="component-tag">Form</span>
+                    <span class="component-tag">Input</span>
+                </div>
+            </div>
+
+            <!-- Live Demo -->
+            <div class="demo-container">
+                <h2 class="demo-title">Default Input</h2>
+                <div class="demo-item" style="max-width: 500px; margin: 0 auto;">
+                    <div class="form-group">
+                        <label for="demo-name" class="form-label">Name</label>
+                        <input
+                            type="text"
+                            id="demo-name"
+                            placeholder="Enter your name"
+                            class="form-input"
+                            aria-required="true"
+                            aria-invalid="false"
+                        >
+                        <span class="form-error" id="demo-name-error"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input States -->
+            <div class="demo-container">
+                <h2 class="demo-title">Input States</h2>
+                <div class="demo-grid">
+                    <div class="demo-item">
+                        <p class="demo-label">Default State</p>
+                        <div class="form-group">
+                            <label for="input-default" class="form-label">Email</label>
+                            <input
+                                type="email"
+                                id="input-default"
+                                placeholder="Enter your email"
+                                class="form-input"
+                            >
+                            <span class="form-error"></span>
+                        </div>
+                    </div>
+
+                    <div class="demo-item">
+                        <p class="demo-label">Focus State (simulated)</p>
+                        <div class="form-group">
+                            <label for="input-focus" class="form-label">Email</label>
+                            <input
+                                type="email"
+                                id="input-focus"
+                                placeholder="Enter your email"
+                                class="form-input"
+                                style="border-color: var(--color-primary); background-color: rgba(255, 255, 255, 0.08);"
+                            >
+                            <span class="form-error"></span>
+                        </div>
+                    </div>
+
+                    <div class="demo-item">
+                        <p class="demo-label">Error State</p>
+                        <div class="form-group">
+                            <label for="input-error" class="form-label">Email</label>
+                            <input
+                                type="email"
+                                id="input-error"
+                                value="invalid-email"
+                                class="form-input error"
+                                aria-invalid="true"
+                            >
+                            <span class="form-error visible">Please enter a valid email address</span>
+                        </div>
+                    </div>
+
+                    <div class="demo-item">
+                        <p class="demo-label">Success State</p>
+                        <div class="form-group">
+                            <label for="input-success" class="form-label">Email</label>
+                            <input
+                                type="email"
+                                id="input-success"
+                                value="user@example.com"
+                                class="form-input success"
+                                aria-invalid="false"
+                            >
+                            <span class="form-error"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Types -->
+            <div class="demo-container">
+                <h2 class="demo-title">Input Types</h2>
+                <div class="demo-grid">
+                    <div class="demo-item">
+                        <div class="form-group">
+                            <label for="input-text" class="form-label">Name (text)</label>
+                            <input
+                                type="text"
+                                id="input-text"
+                                placeholder="Enter your name"
+                                class="form-input"
+                            >
+                            <span class="form-error"></span>
+                        </div>
+                    </div>
+
+                    <div class="demo-item">
+                        <div class="form-group">
+                            <label for="input-email" class="form-label">Email (email)</label>
+                            <input
+                                type="email"
+                                id="input-email"
+                                placeholder="you@example.com"
+                                class="form-input"
+                            >
+                            <span class="form-error"></span>
+                        </div>
+                    </div>
+
+                    <div class="demo-item">
+                        <div class="form-group">
+                            <label for="input-password" class="form-label">Password (password)</label>
+                            <input
+                                type="password"
+                                id="input-password"
+                                placeholder="Enter your password"
+                                class="form-input"
+                            >
+                            <span class="form-error"></span>
+                        </div>
+                    </div>
+
+                    <div class="demo-item">
+                        <div class="form-group">
+                            <label for="input-url" class="form-label">Website (url)</label>
+                            <input
+                                type="url"
+                                id="input-url"
+                                placeholder="https://example.com"
+                                class="form-input"
+                            >
+                            <span class="form-error"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Demo -->
+            <div class="demo-container">
+                <h2 class="demo-title">Interactive Validation Demo</h2>
+                <div class="demo-item" style="max-width: 500px; margin: 0 auto;">
+                    <div class="form-group">
+                        <label for="demo-email" class="form-label">Email Address</label>
+                        <input
+                            type="email"
+                            id="demo-email"
+                            placeholder="Enter your email"
+                            class="form-input"
+                            aria-required="true"
+                            aria-invalid="false"
+                        >
+                        <span class="form-error" id="demo-email-error"></span>
+                    </div>
+                    <p style="margin-top: 1rem; color: var(--color-text); font-size: 0.9rem; text-align: center;">
+                        Try typing an invalid email and clicking outside the field
+                    </p>
+                </div>
+            </div>
+
+            <!-- Code Example -->
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-title">HTML Structure</span>
+                </div>
+                <pre class="code-content">&lt;div class="form-group"&gt;
+    &lt;label for="email" class="form-label"&gt;Email&lt;/label&gt;
+    &lt;input
+        type="email"
+        id="email"
+        placeholder="Enter your email"
+        required
+        autocomplete="email"
+        class="form-input"
+        aria-required="true"
+        aria-invalid="false"
+    &gt;
+    &lt;span class="form-error" id="emailError"&gt;&lt;/span&gt;
+&lt;/div&gt;</pre>
+            </div>
+
+            <!-- JavaScript -->
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-title">JavaScript (Validation)</span>
+                </div>
+                <pre class="code-content">function validateEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+function validateField(input, errorElement, validator) {
+    const value = input.value.trim();
+    let errorMessage = '';
+
+    if (!value) {
+        errorMessage = 'This field is required';
+    } else if (validator && !validator(value)) {
+        errorMessage = 'Please enter a valid email address';
+    }
+
+    if (errorMessage) {
+        input.classList.add('error');
+        input.classList.remove('success');
+        input.setAttribute('aria-invalid', 'true');
+        errorElement.textContent = errorMessage;
+        errorElement.classList.add('visible');
+        return false;
+    } else {
+        input.classList.remove('error');
+        input.classList.add('success');
+        input.setAttribute('aria-invalid', 'false');
+        errorElement.textContent = '';
+        errorElement.classList.remove('visible');
+        return true;
+    }
+}
+
+// Validate on blur
+emailInput.addEventListener('blur', () => {
+    validateField(emailInput, emailError, validateEmail);
+});
+
+// Clear validation on focus
+emailInput.addEventListener('focus', () => {
+    input.classList.remove('error', 'success');
+    errorElement.classList.remove('visible');
+});</pre>
+            </div>
+
+            <!-- CSS Reference -->
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-title">CSS Classes & Styling</span>
+                </div>
+                <pre class="code-content">Classes:
+  .form-group     - Container for label, input, error
+  .form-label     - Input label
+  .form-input     - Input field
+  .form-error     - Error message
+  .error          - Error state modifier
+  .success        - Success state modifier
+  .visible        - Makes error message visible
+
+Input Styling:
+  • Width: 100%
+  • Padding: 1rem 1.25rem
+  • Background: rgba(255, 255, 255, 0.05)
+  • Border: 1px solid rgba(183, 65, 254, 0.2)
+  • Border-radius: 4px
+  • Color: var(--color-text)
+  • Font-size: 1rem
+
+Label Styling:
+  • Font-size: 0.875rem
+  • Font-weight: 500
+  • Color: var(--color-primary)
+  • Margin-bottom: 0.5rem
+  • Letter-spacing: 0.02em
+
+Focus State:
+  • Border: var(--color-primary)
+  • Background: rgba(255, 255, 255, 0.08)
+  • Outline: none
+
+Error State:
+  • Border: rgb(239, 68, 68)
+  • Background: rgba(239, 68, 68, 0.05)
+
+Success State:
+  • Border: rgb(34, 197, 94)
+
+Error Message:
+  • Font-size: 0.8rem
+  • Color: rgb(239, 68, 68)
+  • Margin-top: 0.5rem
+  • Opacity: 0 (hidden by default)
+  • .visible: opacity 1
+
+Styling Reference:
+  styles.css:809-878</pre>
+            </div>
+
+            <!-- Props/Attributes -->
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-title">Blazor Component Props</span>
+                </div>
+                <pre class="code-content">Proposed Props:
+
+Id (string) [Required]
+  - Input identifier
+
+Label (string) [Required]
+  - Label text
+
+Type (string)
+  - "text" | "email" | "password" | "url" (default: "text")
+
+Placeholder (string)
+  - Placeholder text
+
+Value (string)
+  - Input value (two-way binding)
+
+IsRequired (bool)
+  - Required field
+
+ErrorMessage (string)
+  - Validation error message
+
+IsValid (bool?)
+  - Validation state (null = not validated)
+
+OnChange (EventCallback&lt;string&gt;)
+  - Value change handler
+
+OnBlur (EventCallback)
+  - Blur event handler
+
+CssClass (string)
+  - Additional CSS classes</pre>
+            </div>
+
+            <!-- Implementation Notes -->
+            <div class="demo-container">
+                <h2 class="demo-title">Implementation Notes</h2>
+                <div class="code-content" style="white-space: normal; line-height: 1.8;">
+                    <strong style="color: var(--color-primary);">Validation Pattern:</strong><br>
+                    • Validate on blur (when user leaves field)<br>
+                    • Clear validation on focus (when user starts typing)<br>
+                    • Show error message below input<br>
+                    • Update aria-invalid attribute<br><br>
+
+                    <strong style="color: var(--color-primary);">Visual States:</strong><br>
+                    • Default: subtle border, light background<br>
+                    • Focus: primary border, slightly lighter background<br>
+                    • Error: red border, error background tint<br>
+                    • Success: green border<br><br>
+
+                    <strong style="color: var(--color-primary);">Error Messages:</strong><br>
+                    • Fade in with transition<br>
+                    • Fixed min-height prevents layout shift<br>
+                    • Clear, actionable message text<br>
+                    • Hidden when not in error state<br><br>
+
+                    <strong style="color: var(--color-primary);">Accessibility:</strong><br>
+                    • Proper label association (for/id)<br>
+                    • aria-required for required fields<br>
+                    • aria-invalid for validation state<br>
+                    • Error messages announced to screen readers<br>
+                    • Keyboard accessible<br><br>
+
+                    <strong style="color: var(--color-primary);">UX Considerations:</strong><br>
+                    • Don't validate on every keystroke (annoying)<br>
+                    • Validate on blur (better UX)<br>
+                    • Clear errors on focus (allow correction)<br>
+                    • Placeholder text for guidance<br>
+                    • Autocomplete attributes for better experience
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p class="footer-text">© 2025 cpike</p>
+        <a href="index.html" class="footer-link">← Back to Components</a>
+    </footer>
+
+    <script>
+        // Interactive email validation demo
+        const demoEmail = document.getElementById('demo-email');
+        const demoEmailError = document.getElementById('demo-email-error');
+
+        function validateEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        demoEmail.addEventListener('blur', () => {
+            const value = demoEmail.value.trim();
+            let errorMessage = '';
+
+            if (!value) {
+                errorMessage = 'This field is required';
+            } else if (!validateEmail(value)) {
+                errorMessage = 'Please enter a valid email address';
+            }
+
+            if (errorMessage) {
+                demoEmail.classList.add('error');
+                demoEmail.classList.remove('success');
+                demoEmail.setAttribute('aria-invalid', 'true');
+                demoEmailError.textContent = errorMessage;
+                demoEmailError.classList.add('visible');
+            } else {
+                demoEmail.classList.remove('error');
+                demoEmail.classList.add('success');
+                demoEmail.setAttribute('aria-invalid', 'false');
+                demoEmailError.textContent = '';
+                demoEmailError.classList.remove('visible');
+            }
+        });
+
+        demoEmail.addEventListener('focus', () => {
+            demoEmail.classList.remove('error', 'success');
+            demoEmailError.classList.remove('visible');
+        });
+    </script>
+</body>
+</html>

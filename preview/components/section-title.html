@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SectionTitle Component - cpike.ca</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../tokens.css">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="components.css">
+    <style>
+        .demo-trigger-animation {
+            padding: 0.75rem 1.5rem;
+            background: transparent;
+            border: 2px solid var(--color-primary);
+            border-radius: 4px;
+            color: var(--color-primary);
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all var(--transition-base);
+            font-variant: small-caps;
+            letter-spacing: 0.05em;
+            margin-top: 1rem;
+        }
+
+        .demo-trigger-animation:hover {
+            background: var(--color-primary);
+            color: var(--color-background);
+        }
+    </style>
+</head>
+<body>
+    <!-- Desktop Navigation -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="index.html">Components</a></li>
+            <li><a href="section-title.html" class="active">SectionTitle</a></li>
+        </ul>
+    </nav>
+
+    <main class="showcase-container">
+        <!-- Component Header -->
+        <section class="component-section">
+            <div class="component-header">
+                <h1 class="component-name">SectionTitle</h1>
+                <p class="component-description">
+                    Consistent section heading with animated gradient underline that expands on scroll.
+                    Uses small-caps styling and primary color theme.
+                </p>
+                <div class="component-meta">
+                    <span class="phase-badge phase-1">Phase 1</span>
+                    <span class="component-tag">Typography</span>
+                    <span class="component-tag">Animated</span>
+                </div>
+            </div>
+
+            <!-- Live Demo -->
+            <div class="demo-container">
+                <h2 class="demo-title">Basic Title</h2>
+                <div class="demo-item" style="text-align: center;">
+                    <h2 class="section-title" style="position: relative;">About</h2>
+                </div>
+            </div>
+
+            <!-- Animation Demo -->
+            <div class="demo-container">
+                <h2 class="demo-title">Animated Underline</h2>
+                <div class="demo-item" style="text-align: center;">
+                    <h2 class="section-title animate-underline" id="animatedTitle1" style="position: relative;">Skills</h2>
+                    <p style="margin-top: 1.5rem; color: var(--color-text); font-size: 0.95rem;">
+                        The underline animates from 0 to 100% width when scrolled into view
+                    </p>
+                    <button class="demo-trigger-animation" onclick="document.getElementById('animatedTitle1').classList.toggle('animate-underline');">
+                        Toggle Animation
+                    </button>
+                </div>
+            </div>
+
+            <!-- Size Variants -->
+            <div class="demo-container">
+                <h2 class="demo-title">Responsive Sizes</h2>
+                <div class="demo-grid">
+                    <div class="demo-item" style="text-align: center;">
+                        <p class="demo-label">Desktop (2.5rem)</p>
+                        <h2 class="section-title animate-underline" style="position: relative; font-size: 2.5rem;">Projects</h2>
+                    </div>
+
+                    <div class="demo-item" style="text-align: center;">
+                        <p class="demo-label">Tablet (2rem)</p>
+                        <h2 class="section-title animate-underline" style="position: relative; font-size: 2rem;">Projects</h2>
+                    </div>
+
+                    <div class="demo-item" style="text-align: center;">
+                        <p class="demo-label">Mobile (1.75rem)</p>
+                        <h2 class="section-title animate-underline" style="position: relative; font-size: 1.75rem;">Projects</h2>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Multiple Titles -->
+            <div class="demo-container">
+                <h2 class="demo-title">Multiple Section Titles</h2>
+                <div class="demo-item" style="text-align: center;">
+                    <h2 class="section-title animate-underline" style="position: relative; margin-bottom: 3rem;">About</h2>
+                    <h2 class="section-title animate-underline" style="position: relative; margin-bottom: 3rem;">Skills</h2>
+                    <h2 class="section-title animate-underline" style="position: relative; margin-bottom: 3rem;">Projects</h2>
+                    <h2 class="section-title animate-underline" style="position: relative; margin-bottom: 3rem;">Work</h2>
+                    <h2 class="section-title animate-underline" style="position: relative;">Contact</h2>
+                </div>
+            </div>
+
+            <!-- Code Example -->
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-title">HTML Structure</span>
+                </div>
+                <pre class="code-content">&lt;!-- Basic Section Title --&gt;
+&lt;h2 class="section-title"&gt;About&lt;/h2&gt;
+
+&lt;!-- With Animation (added by Intersection Observer) --&gt;
+&lt;h2 class="section-title animate-underline"&gt;Skills&lt;/h2&gt;</pre>
+            </div>
+
+            <!-- CSS Reference -->
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-title">CSS Classes & Styling</span>
+                </div>
+                <pre class="code-content">Classes:
+  .section-title         - Base section title styling
+  .animate-underline     - Triggers underline animation
+
+CSS Custom Properties:
+  --font-family-display       (Inter)
+  --font-size-section-title   (2.5rem → 2rem → 1.75rem)
+  --font-weight-section-title (300)
+  --color-primary             (#b741fe)
+  --color-primary-hover       (#d680ff)
+
+Typography:
+  • Small-caps variant
+  • Letter-spacing: 0.08em
+  • Text-transform: lowercase
+  • Inline-block display
+
+Underline:
+  • Positioned -8px below text
+  • Height: 2px
+  • Gradient: primary → primary-hover
+  • Animates width: 0 → 100%
+  • Transition: 0.8s cubic-bezier(0.4, 0, 0.2, 1)
+
+Styling Reference:
+  styles.css:371-397</pre>
+            </div>
+
+            <!-- JavaScript -->
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-title">JavaScript (Intersection Observer)</span>
+                </div>
+                <pre class="code-content">const sectionTitles = document.querySelectorAll('.section-title');
+
+const titleObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate-underline');
+        }
+    });
+}, {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.5  // Trigger when 50% visible
+});
+
+sectionTitles.forEach(title => titleObserver.observe(title));</pre>
+            </div>
+
+            <!-- Props/Attributes -->
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-title">Blazor Component Props</span>
+                </div>
+                <pre class="code-content">Proposed Props:
+
+Title (string) [Required]
+  - Section title text
+
+EnableAnimation (bool)
+  - Toggle underline animation (default: true)
+
+CssClass (string)
+  - Additional CSS classes
+
+HeadingLevel (int)
+  - h1, h2, h3, etc. (default: 2)</pre>
+            </div>
+
+            <!-- Implementation Notes -->
+            <div class="demo-container">
+                <h2 class="demo-title">Implementation Notes</h2>
+                <div class="code-content" style="white-space: normal; line-height: 1.8;">
+                    <strong style="color: var(--color-primary);">Typography:</strong><br>
+                    • Font-weight: 300 (light)<br>
+                    • Small-caps with lowercase text<br>
+                    • Letter-spacing for visual breathing room<br>
+                    • Display: inline-block (for ::after positioning)<br><br>
+
+                    <strong style="color: var(--color-primary);">Animation:</strong><br>
+                    • Triggers at 50% visibility threshold<br>
+                    • Smooth cubic-bezier easing<br>
+                    • Gradient underline adds visual interest<br>
+                    • Only animates once (doesn't reverse on scroll out)<br><br>
+
+                    <strong style="color: var(--color-primary);">Responsive:</strong><br>
+                    • 2.5rem (desktop)<br>
+                    • 2rem (tablet ≤768px)<br>
+                    • 1.75rem (mobile ≤480px)<br><br>
+
+                    <strong style="color: var(--color-primary);">Accessibility:</strong><br>
+                    • Proper heading hierarchy (h2 by default)<br>
+                    • Sufficient color contrast<br>
+                    • Animation respects prefers-reduced-motion
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p class="footer-text">© 2025 cpike</p>
+        <a href="index.html" class="footer-link">← Back to Components</a>
+    </footer>
+</body>
+</html>

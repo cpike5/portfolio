@@ -1,0 +1,54 @@
+/* Design Tokens */
+
+:root {
+    /* Colors */
+    --color-background: #232933;
+    --color-primary: #b741fe;
+    --color-primary-hover: #d680ff;
+    --color-primary-dark: #9c1fe0;
+    --color-accent-pink: #fb4a8b;
+    --color-accent-blue: #0d5596;
+    --color-text: #e0e0e0;
+    --color-text-light: #a0a0a0;
+    --color-heading: #ffffff;
+    --color-surface: #2d3440;
+    --color-border: rgba(255, 255, 255, 0.1);
+
+    /* Typography */
+    --font-family-base: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-family-display: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-family: var(--font-family-base);
+    --font-size-base: 16px;
+    --font-size-nav: 0.95rem;
+    --font-size-hero: 5rem;
+    --font-size-section-title: 2.5rem;
+    --font-size-work-title: 1.5rem;
+    --font-size-body: 1.125rem;
+    --font-weight-nav: 500;
+    --font-weight-hero: 100;
+    --font-weight-section-title: 300;
+    --font-weight-work-title: 400;
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 0.75rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    --spacing-3xl: 4rem;
+    --spacing-nav-vertical: 2rem;
+    --spacing-nav-horizontal: 2rem;
+
+    /* Border Radius */
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+
+    /* Transitions */
+    --transition-base: 0.3s ease;
+}

@@ -1,0 +1,18 @@
+<section id="skills" class="skills-section fade-in">
+    <div class="skills-content">
+        <h2 class="section-title">Skills</h2>
+        <p class="skills-intro">
+            These represent my core technology stack and areas of deepest expertise. I have experience
+            with additional languages and frameworks, and I adapt quickly to new technologies as needed.
+        </p>
+
+        <SkillGroup GroupTitle="Core Technologies"
+                    Skills="@(new List<string> { "C#", "JavaScript", "SQL", "HTML/CSS", ".NET Core", "Blazor", "ASP.NET" })" />
+
+        <SkillGroup GroupTitle="Tools & Monitoring"
+                    Skills="@(new List<string> { "Elastic APM", "Serilog", "Azure DevOps", "CI/CD" })" />
+
+        <SkillGroup GroupTitle="Infrastructure"
+                    Skills="@(new List<string> { "Azure", "SQL Server", "Elasticsearch", "ERP Integration", "Manufacturing Systems" })" />
+    </div>
+</section>
