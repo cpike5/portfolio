@@ -8,6 +8,67 @@ This is a personal portfolio website built with vanilla HTML, CSS, and JavaScrip
 
 ## Architecture
 
+### Directory Structure
+
+```
+portfolio/
+├── index.html              # Production portfolio page
+├── styles.css              # Shared component styles
+├── tokens.css              # Design system tokens (colors, typography, spacing)
+├── script.js               # Shared JavaScript functionality
+├── index.reference.html    # Reference backup
+│
+├── preview/                # Experimental mobile-responsive versions
+│   ├── index.html          # Mobile-responsive portfolio with hamburger nav
+│   ├── design-standards.html
+│   ├── blog/               # Blog prototype
+│   │   ├── index.html      # Blog listing page
+│   │   ├── post.html       # Individual post template
+│   │   ├── blog-styles.css
+│   │   ├── blog-script.js
+│   │   └── post-script.js
+│   └── prototypes/         # Reusable UI components
+│       ├── login.html
+│       ├── register.html
+│       ├── tabs.html
+│       ├── auth.css
+│       ├── auth.js
+│       ├── tabs.css
+│       └── tabs.js
+│
+├── src/                    # Blazor Server application (Phase 1.1+)
+│   └── Portfolio.Web/
+│       ├── Components/     # Blazor components
+│       ├── Data/           # EF Core DbContext and models
+│       ├── wwwroot/        # Static web assets
+│       │   ├── app.css
+│       │   ├── css/        # Stylesheets
+│       │   ├── js/         # JavaScript files
+│       │   ├── assets/     # Images and media
+│       │   └── lib/        # Third-party libraries (Bootstrap)
+│       ├── Program.cs
+│       └── Portfolio.Web.csproj
+│
+├── docs/                   # Project documentation
+│   ├── PRD.md
+│   ├── TECH_SPECS.md
+│   ├── FUNCTIONAL_SPECS.md
+│   ├── IMPLEMENTATION_PLAN.md
+│   └── USER_STORIES.md
+│
+├── infra/                  # Infrastructure and deployment notes
+│   ├── cpike.ca.txt
+│   ├── elisamtg.ca.txt
+│   └── webdock.txt
+│
+├── assets/                 # Project assets
+│   └── preview.png
+│
+├── deploy.sh               # Automated deployment script
+├── CLAUDE.md               # AI assistant guidance
+└── README.md               # Project overview
+```
+
 ### File Structure
 
 **Core Files (Production):**

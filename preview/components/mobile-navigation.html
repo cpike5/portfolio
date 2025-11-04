@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MobileNavigation Component - cpike.ca</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../tokens.css">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="components.css">
+    <style>
+        /* Demo-specific styles to show mobile components on desktop */
+        .demo-mobile-container {
+            max-width: 375px;
+            margin: 0 auto;
+            border: 2px solid rgba(183, 65, 254, 0.3);
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--color-background);
+        }
+
+        .demo-trigger {
+            padding: 1rem 1.5rem;
+            background: var(--color-primary);
+            color: var(--color-background);
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all var(--transition-base);
+            font-variant: small-caps;
+            letter-spacing: 0.05em;
+        }
+
+        .demo-trigger:hover {
+            background: var(--color-primary-hover);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Desktop Navigation -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="index.html">Components</a></li>
+            <li><a href="mobile-navigation.html" class="active">MobileNavigation</a></li>
+        </ul>
+    </nav>
+
+    <main class="showcase-container">
+        <!-- Component Header -->
+        <section class="component-section">
+            <div class="component-header">
+                <h1 class="component-name">MobileNavigation</h1>
+                <p class="component-description">
+                    Full-screen mobile navigation menu with hamburger button, slide-down animation,
+                    and backdrop overlay. Optimized for touch interactions.
+                </p>
+                <div class="component-meta">
+                    <span class="phase-badge phase-1">Phase 1</span>
+                    <span class="component-tag">Layout</span>
+                    <span class="component-tag">Mobile</span>
+                    <span class="component-tag">Interactive</span>
+                </div>
+            </div>
+
+            <!-- Live Demo -->
+            <div class="demo-container">
+                <h2 class="demo-title">Live Demo</h2>
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <button class="demo-trigger" onclick="document.getElementById('demoMenu').classList.add('active'); document.getElementById('demoOverlay').classList.add('active');">
+                        Open Mobile Menu
+                    </button>
+                </div>
+
+                <div class="demo-mobile-container">
+                    <header class="mobile-header" style="display: grid;">
+                        <button class="mobile-menu-button" aria-label="Menu" onclick="document.getElementById('demoMenu').classList.add('active'); document.getElementById('demoOverlay').classList.add('active');">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="menu-icon">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" />
+                            </svg>
+                        </button>
+                        <div class="mobile-title">cpike.ca</div>
+                    </header>
+
+                    <div style="padding: 2rem; text-align: center; color: var(--color-text);">
+                        <p>Click the hamburger menu to test the mobile navigation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Menu Structure Demo -->
+            <div class="demo-container">
+                <h2 class="demo-title">Menu Structure</h2>
+                <div class="demo-mobile-container">
+                    <div class="mobile-menu" style="position: relative; transform: translateY(0);">
+                        <div class="mobile-menu-header">
+                            <span class="mobile-menu-title">Menu</span>
+                            <button class="mobile-menu-close" aria-label="Close menu">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="close-icon">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+                        <ul class="mobile-nav-links">
+                            <li><a href="#home" class="mobile-nav-link active">Home</a></li>
+                            <li><a href="#about" class="mobile-nav-link">About</a></li>
+                            <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
+                            <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+                            <li><a href="#work" class="mobile-nav-link">Work</a></li>
+                            <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Code Example -->
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-title">HTML Structure</span>
+                </div>
+                <pre class="code-content">&lt;!-- Mobile Header --&gt;
+&lt;header class="mobile-header"&gt;
+    &lt;button class="mobile-menu-button" aria-label="Menu"&gt;
+        &lt;svg class="menu-icon"&gt;...&lt;/svg&gt;
+    &lt;/button&gt;
+    &lt;div class="mobile-title"&gt;cpike.ca&lt;/div&gt;
+&lt;/header&gt;
+
+&lt;!-- Overlay --&gt;
+&lt;div class="mobile-menu-overlay" id="overlay"&gt;&lt;/div&gt;
+
+&lt;!-- Menu --&gt;
+&lt;nav class="mobile-menu" id="menu"&gt;
+    &lt;div class="mobile-menu-header"&gt;
+        &lt;span class="mobile-menu-title"&gt;Menu&lt;/span&gt;
+        &lt;button class="mobile-menu-close" aria-label="Close menu"&gt;
+            &lt;svg class="close-icon"&gt;...&lt;/svg&gt;
+        &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;ul class="mobile-nav-links"&gt;
+        &lt;li&gt;&lt;a href="#home" class="mobile-nav-link active"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#about" class="mobile-nav-link"&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;!-- more links --&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</pre>
+            </div>
+
+            <!-- JavaScript -->
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-title">JavaScript (for reference)</span>
+                </div>
+                <pre class="code-content">// Open menu
+menuButton.addEventListener('click', () => {
+    menu.classList.add('active');
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+});
+
+// Close menu
+closeButton.addEventListener('click', closeMenu);
+overlay.addEventListener('click', closeMenu);
+
+function closeMenu() {
+    menu.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+}</pre>
+            </div>
+
+            <!-- Props/Attributes -->
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-title">Blazor Component Props</span>
+                </div>
+                <pre class="code-content">Proposed Props:
+
+NavItems (List&lt;NavItem&gt;)
+  - Text: string (display text)
+  - Href: string (link/route)
+  - IsActive: bool (active state)
+
+IsOpen (bool)
+  - Controls menu visibility
+
+SiteTitle (string)
+  - Header title text (default: "cpike.ca")
+
+OnToggle (EventCallback&lt;bool&gt;)
+  - Menu open/close event
+
+OnNavigate (EventCallback&lt;string&gt;)
+  - Navigation click handler</pre>
+            </div>
+
+            <!-- Implementation Notes -->
+            <div class="demo-container">
+                <h2 class="demo-title">Implementation Notes</h2>
+                <div class="code-content" style="white-space: normal; line-height: 1.8;">
+                    <strong style="color: var(--color-primary);">Behavior:</strong><br>
+                    • Menu slides from top: translateY(-100%) → translateY(0)<br>
+                    • Overlay fades in with backdrop blur<br>
+                    • Body scroll locked when menu open<br>
+                    • Auto-close on navigation<br>
+                    • Close on overlay click<br><br>
+
+                    <strong style="color: var(--color-primary);">Accessibility:</strong><br>
+                    • Aria labels on icon buttons<br>
+                    • Keyboard navigable (Tab, Enter, Escape)<br>
+                    • Focus trap within open menu<br>
+                    • Screen reader friendly<br><br>
+
+                    <strong style="color: var(--color-primary);">Responsive:</strong><br>
+                    • Shown only on mobile (&lt;768px)<br>
+                    • Full viewport height<br>
+                    • Large touch targets (1.25rem padding)<br>
+                    • Centered vertical navigation
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p class="footer-text">© 2025 cpike</p>
+        <a href="index.html" class="footer-link">← Back to Components</a>
+    </footer>
+
+    <!-- Demo Mobile Menu (Full Screen) -->
+    <div class="mobile-menu-overlay" id="demoOverlay" onclick="this.classList.remove('active'); document.getElementById('demoMenu').classList.remove('active');"></div>
+    <nav class="mobile-menu" id="demoMenu">
+        <div class="mobile-menu-header">
+            <span class="mobile-menu-title">Menu</span>
+            <button class="mobile-menu-close" aria-label="Close menu" onclick="document.getElementById('demoMenu').classList.remove('active'); document.getElementById('demoOverlay').classList.remove('active');">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="close-icon">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="#home" class="mobile-nav-link active" onclick="document.getElementById('demoMenu').classList.remove('active'); document.getElementById('demoOverlay').classList.remove('active');">Home</a></li>
+            <li><a href="#about" class="mobile-nav-link" onclick="document.getElementById('demoMenu').classList.remove('active'); document.getElementById('demoOverlay').classList.remove('active');">About</a></li>
+            <li><a href="#skills" class="mobile-nav-link" onclick="document.getElementById('demoMenu').classList.remove('active'); document.getElementById('demoOverlay').classList.remove('active');">Skills</a></li>
+            <li><a href="#projects" class="mobile-nav-link" onclick="document.getElementById('demoMenu').classList.remove('active'); document.getElementById('demoOverlay').classList.remove('active');">Projects</a></li>
+            <li><a href="#work" class="mobile-nav-link" onclick="document.getElementById('demoMenu').classList.remove('active'); document.getElementById('demoOverlay').classList.remove('active');">Work</a></li>
+            <li><a href="#contact" class="mobile-nav-link" onclick="document.getElementById('demoMenu').classList.remove('active'); document.getElementById('demoOverlay').classList.remove('active');">Contact</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

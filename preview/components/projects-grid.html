@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProjectsGrid Component - cpike.ca</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../tokens.css">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="components.css">
+</head>
+<body>
+    <!-- Desktop Navigation -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="index.html">Components</a></li>
+            <li><a href="projects-grid.html" class="active">ProjectsGrid</a></li>
+        </ul>
+    </nav>
+
+    <main class="showcase-container">
+        <!-- Component Header -->
+        <section class="component-section">
+            <div class="component-header">
+                <h1 class="component-name">ProjectsGrid</h1>
+                <p class="component-description">
+                    Responsive grid layout for project cards with auto-fit columns. Displays project image,
+                    title, description, and link in an elegant card format.
+                </p>
+                <div class="component-meta">
+                    <span class="phase-badge phase-2">Phase 2</span>
+                    <span class="component-tag">Layout</span>
+                    <span class="component-tag">Grid</span>
+                </div>
+            </div>
+
+            <!-- Live Demo -->
+            <div class="demo-container">
+                <h2 class="demo-title">Complete Projects Grid</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <img src="../../assets/preview.png" alt="Discord Bot Framework screenshot" class="project-image">
+                        <h3 class="project-title">Discord Bot Framework</h3>
+                        <p class="project-description">
+                            ASP.NET Core Discord bot framework with Discord.NET integration and a Blazor admin dashboard. Features secure user registration via Discord DMs.
+                        </p>
+                        <a href="#" class="project-link">
+                            View on GitHub →
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <img src="../../assets/preview.png" alt="Portfolio Site screenshot" class="project-image">
+                        <h3 class="project-title">Portfolio Site</h3>
+                        <p class="project-description">
+                            Minimalist portfolio built with vanilla HTML, CSS, and JavaScript. Open sourced as a template for others to use.
+                        </p>
+                        <a href="#" class="project-link">
+                            View on GitHub →
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image-placeholder">
+                            <span class="placeholder-text">Screenshot</span>
+                        </div>
+                        <h3 class="project-title">E-Commerce Platform</h3>
+                        <p class="project-description">
+                            Full-stack e-commerce solution with payment integration, inventory management, and admin dashboard.
+                        </p>
+                        <a href="#" class="project-link">
+                            View on GitHub →
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grid Layouts -->
+            <div class="demo-container">
+                <h2 class="demo-title">Two-Column Layout</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <img src="../../assets/preview.png" alt="Project screenshot" class="project-image">
+                        <h3 class="project-title">Task Manager App</h3>
+                        <p class="project-description">
+                            Real-time collaborative task management with drag-and-drop interface.
+                        </p>
+                        <a href="#" class="project-link">
+                            View on GitHub →
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image-placeholder">
+                            <span class="placeholder-text">Screenshot</span>
+                        </div>
+                        <h3 class="project-title">Weather Dashboard</h3>
+                        <p class="project-description">
+                            Weather forecasting dashboard with interactive charts and location search.
+                        </p>
+                        <a href="#" class="project-link">
+                            View on GitHub →
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single Card -->
+            <div class="demo-container">
+                <h2 class="demo-title">Single Project Card</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <img src="../../assets/preview.png" alt="Featured project" class="project-image">
+                        <h3 class="project-title">Featured Project</h3>
+                        <p class="project-description">
+                            A comprehensive project showcasing advanced features and modern development practices. Built with cutting-edge technologies.
+                        </p>
+                        <a href="#" class="project-link">
+                            View on GitHub →
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Layout -->
+            <div class="demo-container">
+                <h2 class="demo-title">Mobile Layout (Single Column)</h2>
+                <div style="max-width: 400px; margin: 0 auto;">
+                    <div class="projects-grid" style="grid-template-columns: 1fr;">
+                        <div class="project-card">
+                            <img src="../../assets/preview.png" alt="Mobile project" class="project-image">
+                            <h3 class="project-title">Mobile App</h3>
+                            <p class="project-description">
+                                Cross-platform mobile application built with modern frameworks.
+                            </p>
+                            <a href="#" class="project-link">
+                                View on GitHub →
+                            </a>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image-placeholder">
+                                <span class="placeholder-text">Screenshot</span>
+                            </div>
+                            <h3 class="project-title">API Gateway</h3>
+                            <p class="project-description">
+                                Microservices API gateway with authentication and rate limiting.
+                            </p>
+                            <a href="#" class="project-link">
+                                View on GitHub →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Code Example -->
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-title">HTML Structure</span>
+                </div>
+                <pre class="code-content">&lt;div class="projects-grid"&gt;
+    &lt;div class="project-card"&gt;
+        &lt;img src="screenshot.png" alt="Project" class="project-image"&gt;
+        &lt;h3 class="project-title"&gt;Project Name&lt;/h3&gt;
+        &lt;p class="project-description"&gt;Description...&lt;/p&gt;
+        &lt;a href="#" class="project-link"&gt;View on GitHub →&lt;/a&gt;
+    &lt;/div&gt;
+
+    &lt;div class="project-card"&gt;
+        &lt;div class="project-image-placeholder"&gt;
+            &lt;span class="placeholder-text"&gt;Screenshot&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;h3 class="project-title"&gt;Another Project&lt;/h3&gt;
+        &lt;p class="project-description"&gt;Description...&lt;/p&gt;
+        &lt;a href="#" class="project-link"&gt;View on GitHub →&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+            </div>
+
+            <!-- CSS Reference -->
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-title">CSS Classes & Styling</span>
+                </div>
+                <pre class="code-content">Classes:
+  .projects-grid             - Grid container
+  .project-card              - Individual project card
+  .project-image             - Project screenshot
+  .project-image-placeholder - Placeholder when no image
+  .project-title             - Project title
+  .project-description       - Project description
+  .project-link              - GitHub link
+
+Grid Layout:
+  • Display: grid
+  • Template: repeat(auto-fit, minmax(300px, 1fr))
+  • Gap: 2rem
+  • Responsive: auto-fit adjusts columns
+
+Project Card:
+  • Display: flex, flex-direction: column
+  • Padding: 2rem
+  • Border: 1px solid rgba(183, 65, 254, 0.2)
+  • Border-radius: 8px
+  • Background: gradient (primary with low opacity)
+  • Top accent: 3px gradient line
+
+Image Styling:
+  • Width: calc(100% - 1rem) (inset from edges)
+  • Height: 200px
+  • Object-fit: cover
+  • Border-radius: 8px
+  • Margin: 0 auto 1.5rem
+
+Placeholder:
+  • Same dimensions as image
+  • Gradient background with pattern
+  • Centered "Screenshot" text
+
+Hover Effects:
+  • Card: translateY(-5px)
+  • Border: solid primary color
+  • Background: intensified gradient
+  • Title: translateX(5px)
+  • Link gap: increases
+
+Responsive:
+  • Desktop: 2-3 columns (auto-fit)
+  • Tablet (≤768px): 1 column
+  • Mobile (≤480px): 1 column, reduced padding
+
+Styling Reference:
+  styles.css:529-670</pre>
+            </div>
+
+            <!-- Props/Attributes -->
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-title">Blazor Component Props</span>
+                </div>
+                <pre class="code-content">Proposed Props:
+
+Projects (List&lt;Project&gt;) [Required]
+  - Collection of projects to display
+
+Project Model:
+  - Title: string
+  - Description: string
+  - ImageUrl: string (optional)
+  - ImageAlt: string
+  - LinkUrl: string
+  - LinkText: string (default: "View on GitHub →")
+
+GridGap (string)
+  - Gap between cards (default: "2rem")
+
+MinCardWidth (string)
+  - Minimum card width (default: "300px")
+
+CssClass (string)
+  - Additional CSS classes</pre>
+            </div>
+
+            <!-- Implementation Notes -->
+            <div class="demo-container">
+                <h2 class="demo-title">Implementation Notes</h2>
+                <div class="code-content" style="white-space: normal; line-height: 1.8;">
+                    <strong style="color: var(--color-primary);">Grid Behavior:</strong><br>
+                    • Auto-fit creates responsive columns automatically<br>
+                    • Minimum card width: 300px<br>
+                    • Cards expand to fill available space<br>
+                    • Stacks to single column on mobile<br><br>
+
+                    <strong style="color: var(--color-primary);">Card Layout:</strong><br>
+                    • Flexbox column layout<br>
+                    • Image/placeholder at top<br>
+                    • Title and description in middle<br>
+                    • Link pushed to bottom (margin-top: auto)<br><br>
+
+                    <strong style="color: var(--color-primary);">Images:</strong><br>
+                    • Fixed height (200px) for consistency<br>
+                    • Object-fit: cover maintains aspect ratio<br>
+                    • Placeholder shown when no image available<br>
+                    • Consider lazy loading for performance<br><br>
+
+                    <strong style="color: var(--color-primary);">Interaction:</strong><br>
+                    • Card lifts on hover (5px)<br>
+                    • Title shifts right on card hover<br>
+                    • Link arrow gap increases on hover<br>
+                    • Smooth transitions throughout<br><br>
+
+                    <strong style="color: var(--color-primary);">Content Guidelines:</strong><br>
+                    • Keep descriptions concise (2-3 sentences)<br>
+                    • Use descriptive alt text for images<br>
+                    • Provide meaningful project titles<br>
+                    • Include working links to repositories<br><br>
+
+                    <strong style="color: var(--color-primary);">Accessibility:</strong><br>
+                    • Semantic HTML structure<br>
+                    • Proper heading hierarchy<br>
+                    • Descriptive link text<br>
+                    • Image alt attributes<br>
+                    • Focus states on interactive elements
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p class="footer-text">© 2025 cpike</p>
+        <a href="index.html" class="footer-link">← Back to Components</a>
+    </footer>
+</body>
+</html>

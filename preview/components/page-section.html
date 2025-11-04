@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PageSection Component - cpike.ca</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../tokens.css">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="components.css">
+</head>
+<body>
+    <!-- Desktop Navigation -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="index.html">Components</a></li>
+            <li><a href="page-section.html" class="active">PageSection</a></li>
+        </ul>
+    </nav>
+
+    <main class="showcase-container">
+        <!-- Component Header -->
+        <section class="component-section">
+            <div class="component-header">
+                <h1 class="component-name">PageSection</h1>
+                <p class="component-description">
+                    Container component for page sections with consistent spacing, centering, and optional fade-in animations.
+                    Provides configurable max-width and responsive padding.
+                </p>
+                <div class="component-meta">
+                    <span class="phase-badge phase-1">Phase 1</span>
+                    <span class="component-tag">Layout</span>
+                    <span class="component-tag">Container</span>
+                </div>
+            </div>
+
+            <!-- Live Demo -->
+            <div class="demo-container">
+                <h2 class="demo-title">Layout Variants</h2>
+                <div class="demo-grid">
+                    <div class="demo-item">
+                        <p class="demo-label">About Section (max-width: 700px)</p>
+                        <section id="about" class="about-section" style="min-height: auto; padding: 2rem;">
+                            <div class="about-content">
+                                <h2 class="section-title" style="position: relative;">About</h2>
+                                <p class="about-text">
+                                    This section uses a 700px max-width content container, ideal for
+                                    readable text content and biographical information.
+                                </p>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="demo-item">
+                        <p class="demo-label">Skills Section (max-width: 900px)</p>
+                        <section id="skills" class="skills-section" style="min-height: auto; padding: 2rem;">
+                            <div class="skills-content">
+                                <h2 class="section-title" style="position: relative;">Skills</h2>
+                                <p class="skills-intro">
+                                    This section uses a 900px max-width, providing more room for
+                                    skill grids and multi-column layouts.
+                                </p>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="demo-item">
+                        <p class="demo-label">Projects Section (max-width: 1000px)</p>
+                        <section id="projects" class="projects-section" style="min-height: auto; padding: 2rem;">
+                            <div class="projects-content">
+                                <h2 class="section-title" style="position: relative;">Projects</h2>
+                                <p class="projects-intro">
+                                    This section uses a 1000px max-width for wider layouts like
+                                    project grids and card displays.
+                                </p>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Full Height Demo -->
+            <div class="demo-container">
+                <h2 class="demo-title">Full-Height Section</h2>
+                <div class="demo-item">
+                    <p class="demo-label">Full viewport height with centered content</p>
+                    <section class="about-section" style="min-height: 60vh; padding: 2rem;">
+                        <div class="about-content">
+                            <h2 class="section-title" style="position: relative;">Centered Content</h2>
+                            <p class="about-text">
+                                Sections use flexbox to vertically and horizontally center content.
+                                The min-height can be set to 100vh for full-page sections.
+                            </p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <!-- Code Example -->
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-title">HTML Structure</span>
+                </div>
+                <pre class="code-content">&lt;!-- About Section (700px max-width) --&gt;
+&lt;section id="about" class="about-section fade-in"&gt;
+    &lt;div class="about-content"&gt;
+        &lt;h2 class="section-title"&gt;About&lt;/h2&gt;
+        &lt;p class="about-text"&gt;Content here...&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;!-- Skills Section (900px max-width) --&gt;
+&lt;section id="skills" class="skills-section fade-in"&gt;
+    &lt;div class="skills-content"&gt;
+        &lt;h2 class="section-title"&gt;Skills&lt;/h2&gt;
+        &lt;p class="skills-intro"&gt;Content here...&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;!-- Projects Section (1000px max-width) --&gt;
+&lt;section id="projects" class="projects-section fade-in"&gt;
+    &lt;div class="projects-content"&gt;
+        &lt;h2 class="section-title"&gt;Projects&lt;/h2&gt;
+        &lt;p class="projects-intro"&gt;Content here...&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/section&gt;</pre>
+            </div>
+
+            <!-- CSS Reference -->
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-title">CSS Classes</span>
+                </div>
+                <pre class="code-content">Section Classes:
+  .about-section      - About page section
+  .skills-section     - Skills page section
+  .projects-section   - Projects page section
+  .work-section       - Work experience section
+  .contact-section    - Contact form section
+
+Content Containers:
+  .about-content      - 700px max-width
+  .skills-content     - 900px max-width
+  .projects-content   - 1000px max-width
+  .work-content       - 800px max-width
+  .contact-content    - 600px max-width
+
+Animation:
+  .fade-in            - Initial fade-in state
+  .fade-in-visible    - Animated visible state
+
+Styling Reference:
+  styles.css:357-410 (About)
+  styles.css:411-462 (Skills)
+  styles.css:504-570 (Projects)
+  styles.css:669-726 (Work)
+  styles.css:727-1087 (Contact)</pre>
+            </div>
+
+            <!-- Props/Attributes -->
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-title">Blazor Component Props</span>
+                </div>
+                <pre class="code-content">Proposed Props:
+
+Id (string)
+  - Section identifier for navigation anchors
+
+MaxWidth (string)
+  - Content max-width: "700px" | "800px" | "900px" | "1000px"
+
+EnableFadeIn (bool)
+  - Toggle scroll-triggered fade-in animation
+
+FullHeight (bool)
+  - Use min-height: 100vh
+
+CssClass (string)
+  - Additional CSS classes
+
+ChildContent (RenderFragment)
+  - Section content</pre>
+            </div>
+
+            <!-- Implementation Notes -->
+            <div class="demo-container">
+                <h2 class="demo-title">Implementation Notes</h2>
+                <div class="code-content" style="white-space: normal; line-height: 1.8;">
+                    <strong style="color: var(--color-primary);">Layout:</strong><br>
+                    • Flexbox centered (justify-content: center, align-items: center)<br>
+                    • Full-height sections: min-height: 100vh<br>
+                    • Responsive padding: 4rem → 3rem → 2.5rem<br>
+                    • Content containers limit width for readability<br><br>
+
+                    <strong style="color: var(--color-primary);">Animation:</strong><br>
+                    • Intersection Observer triggers fade-in<br>
+                    • Threshold: 0.1 (10% visible)<br>
+                    • Transforms from translateY(30px) to translateY(0)<br>
+                    • Opacity animates from 0 to 1<br><br>
+
+                    <strong style="color: var(--color-primary);">Max-Width Guidelines:</strong><br>
+                    • 600px: Forms, narrow content<br>
+                    • 700px: Text-heavy sections (About)<br>
+                    • 800px: Mixed content (Work)<br>
+                    • 900px: Grid layouts (Skills)<br>
+                    • 1000px: Card grids (Projects)
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p class="footer-text">© 2025 cpike</p>
+        <a href="index.html" class="footer-link">← Back to Components</a>
+    </footer>
+</body>
+</html>

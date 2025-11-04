@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Component - cpike.ca</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../tokens.css">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="components.css">
+</head>
+<body>
+    <!-- Desktop Navigation -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="index.html">Components</a></li>
+            <li><a href="card.html" class="active">Card</a></li>
+        </ul>
+    </nav>
+
+    <main class="showcase-container">
+        <!-- Component Header -->
+        <section class="component-section">
+            <div class="component-header">
+                <h1 class="component-name">Card</h1>
+                <p class="component-description">
+                    Versatile card component with three variants: Project cards with images and links,
+                    Skill cards for grid layouts, and Work cards for experience highlights.
+                </p>
+                <div class="component-meta">
+                    <span class="phase-badge phase-1">Phase 1</span>
+                    <span class="component-tag">Container</span>
+                    <span class="component-tag">Interactive</span>
+                </div>
+            </div>
+
+            <!-- Project Card Variant -->
+            <div class="demo-container">
+                <h2 class="demo-title">Project Card</h2>
+                <div class="demo-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                    <div class="project-card">
+                        <img src="../../assets/preview.png" alt="Project screenshot" class="project-image">
+                        <h3 class="project-title">Discord Bot Framework</h3>
+                        <p class="project-description">
+                            ASP.NET Core Discord bot framework with Discord.NET integration and a Blazor admin dashboard.
+                        </p>
+                        <a href="#" class="project-link">
+                            View on GitHub →
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image-placeholder">
+                            <span class="placeholder-text">Screenshot</span>
+                        </div>
+                        <h3 class="project-title">Portfolio Site</h3>
+                        <p class="project-description">
+                            Minimalist portfolio built with vanilla HTML, CSS, and JavaScript. Open sourced as a template.
+                        </p>
+                        <a href="#" class="project-link">
+                            View on GitHub →
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skill Card Variant -->
+            <div class="demo-container">
+                <h2 class="demo-title">Skill Card</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">C#</div>
+                    <div class="skill-item">JavaScript</div>
+                    <div class="skill-item">SQL</div>
+                    <div class="skill-item">HTML/CSS</div>
+                    <div class="skill-item">.NET Core</div>
+                    <div class="skill-item">Blazor</div>
+                    <div class="skill-item">ASP.NET</div>
+                    <div class="skill-item">Azure</div>
+                </div>
+            </div>
+
+            <!-- Work Card Variant -->
+            <div class="demo-container">
+                <h2 class="demo-title">Work Card</h2>
+                <div class="demo-grid">
+                    <div class="work-item">
+                        <h3 class="work-title">Application Modernization</h3>
+                        <p class="work-description">
+                            Led the migration of legacy Classic ASP applications to modern Blazor WebAssembly
+                            on Microsoft Azure. The modernized apps are faster, easier to maintain, and provide
+                            a better experience for users.
+                        </p>
+                    </div>
+
+                    <div class="work-item">
+                        <h3 class="work-title">Enterprise Monitoring</h3>
+                        <p class="work-description">
+                            Built out monitoring and logging infrastructure using Elastic APM and Serilog
+                            across our applications. Having real-time visibility into app performance made
+                            a huge difference in response times.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hover States -->
+            <div class="demo-container">
+                <h2 class="demo-title">Interactive States</h2>
+                <div class="variant-showcase">
+                    <div class="variant-item">
+                        <div class="skill-item" style="margin: 0;">Azure</div>
+                        <p class="variant-label">Skill Card - Hover for lift effect</p>
+                    </div>
+
+                    <div class="variant-item">
+                        <div style="padding: 1rem; border: 1px solid rgba(183, 65, 254, 0.2); border-radius: 8px;">
+                            <h3 class="project-title" style="margin: 0;">Project Title</h3>
+                        </div>
+                        <p class="variant-label">Project Title - Hover shifts right</p>
+                    </div>
+
+                    <div class="variant-item">
+                        <a href="#" class="project-link">View on GitHub →</a>
+                        <p class="variant-label">Project Link - Hover increases gap</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Code Examples -->
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-title">Project Card HTML</span>
+                </div>
+                <pre class="code-content">&lt;div class="project-card"&gt;
+    &lt;img src="screenshot.png" alt="Project" class="project-image"&gt;
+    &lt;!-- OR placeholder --&gt;
+    &lt;div class="project-image-placeholder"&gt;
+        &lt;span class="placeholder-text"&gt;Screenshot&lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;h3 class="project-title"&gt;Project Name&lt;/h3&gt;
+    &lt;p class="project-description"&gt;Description text...&lt;/p&gt;
+    &lt;a href="#" class="project-link"&gt;View on GitHub →&lt;/a&gt;
+&lt;/div&gt;</pre>
+            </div>
+
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-title">Skill Card HTML</span>
+                </div>
+                <pre class="code-content">&lt;div class="skill-item"&gt;C#&lt;/div&gt;
+&lt;div class="skill-item"&gt;JavaScript&lt;/div&gt;
+&lt;div class="skill-item"&gt;Azure&lt;/div&gt;</pre>
+            </div>
+
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-title">Work Card HTML</span>
+                </div>
+                <pre class="code-content">&lt;div class="work-item"&gt;
+    &lt;h3 class="work-title"&gt;Application Modernization&lt;/h3&gt;
+    &lt;p class="work-description"&gt;Description text...&lt;/p&gt;
+&lt;/div&gt;</pre>
+            </div>
+
+            <!-- CSS Reference -->
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-title">CSS Classes</span>
+                </div>
+                <pre class="code-content">Project Card:
+  .project-card              - Card container
+  .project-image             - Image (200px height)
+  .project-image-placeholder - Placeholder with pattern
+  .project-title             - Card title
+  .project-description       - Description text
+  .project-link              - GitHub link with arrow
+
+Skill Card:
+  .skill-item                - Individual skill badge
+
+Work Card:
+  .work-item                 - Work experience card
+  .work-title                - Experience title
+  .work-description          - Experience description
+
+Styling References:
+  Project: styles.css:536-670
+  Skill:   styles.css:463-502
+  Work:    styles.css:692-726</pre>
+            </div>
+
+            <!-- Card Features -->
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-title">Card Features</span>
+                </div>
+                <pre class="code-content">Common Features:
+  • Gradient background (primary color with transparency)
+  • Border: 1px solid rgba(183, 65, 254, 0.2)
+  • Border radius: 8px
+  • Hover elevation effect (translateY)
+  • Top gradient accent (appears on hover)
+  • Smooth transitions (0.3s ease)
+
+Project Card:
+  • 2rem padding
+  • Flex column layout
+  • Image/placeholder at top
+  • Link at bottom (margin-top: auto)
+  • Hover: translateY(-5px), title shifts right
+
+Skill Card:
+  • Centered text
+  • 1rem vertical, 1.5rem horizontal padding
+  • 2px top accent on hover
+  • Hover: translateY(-3px)
+
+Work Card:
+  • 2rem padding
+  • Bottom border separator
+  • Hover: background tint, translateY(-4px)</pre>
+            </div>
+
+            <!-- Props/Attributes -->
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-title">Blazor Component Props</span>
+                </div>
+                <pre class="code-content">Project Card Props:
+
+Title (string) [Required]
+ImageUrl (string)
+ImageAlt (string)
+Description (string)
+LinkUrl (string)
+LinkText (string) (default: "View on GitHub →")
+OnClick (EventCallback)
+
+---
+
+Skill Card Props:
+
+SkillName (string) [Required]
+CssClass (string)
+
+---
+
+Work Card Props:
+
+Title (string) [Required]
+Description (string) [Required]
+CssClass (string)</pre>
+            </div>
+
+            <!-- Implementation Notes -->
+            <div class="demo-container">
+                <h2 class="demo-title">Implementation Notes</h2>
+                <div class="code-content" style="white-space: normal; line-height: 1.8;">
+                    <strong style="color: var(--color-primary);">Design Pattern:</strong><br>
+                    • All cards share gradient background and border styling<br>
+                    • Top gradient accent line (3px for project, 2px for skill)<br>
+                    • Hover effects use GPU-accelerated transforms<br>
+                    • Consistent border radius and spacing<br><br>
+
+                    <strong style="color: var(--color-primary);">Responsive:</strong><br>
+                    • Project cards: Grid auto-fit, min 300px<br>
+                    • Skill cards: 4 columns → 2 columns on mobile<br>
+                    • Work cards: Stack vertically, reduced padding<br>
+                    • Mobile padding: 1.5rem → 1.25rem<br><br>
+
+                    <strong style="color: var(--color-primary);">Accessibility:</strong><br>
+                    • Semantic HTML (article, h3, p, a)<br>
+                    • Proper alt text on images<br>
+                    • Focus states visible<br>
+                    • Links have descriptive text<br><br>
+
+                    <strong style="color: var(--color-primary);">Performance:</strong><br>
+                    • Transform and opacity for animations<br>
+                    • No layout thrashing<br>
+                    • Lazy load images when implemented
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p class="footer-text">© 2025 cpike</p>
+        <a href="index.html" class="footer-link">← Back to Components</a>
+    </footer>
+</body>
+</html>

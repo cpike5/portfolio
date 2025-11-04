@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FormMessage Component - cpike.ca</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../tokens.css">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="components.css">
+</head>
+<body>
+    <!-- Desktop Navigation -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="index.html">Components</a></li>
+            <li><a href="form-message.html" class="active">FormMessage</a></li>
+        </ul>
+    </nav>
+
+    <main class="showcase-container">
+        <!-- Component Header -->
+        <section class="component-section">
+            <div class="component-header">
+                <h1 class="component-name">FormMessage</h1>
+                <p class="component-description">
+                    Notification component for displaying success and error messages with fade-in animation.
+                    Supports auto-dismiss and different message types.
+                </p>
+                <div class="component-meta">
+                    <span class="phase-badge phase-3">Phase 3</span>
+                    <span class="component-tag">Form</span>
+                    <span class="component-tag">Feedback</span>
+                </div>
+            </div>
+
+            <!-- Live Demo -->
+            <div class="demo-container">
+                <h2 class="demo-title">Message Types</h2>
+                <div class="demo-grid">
+                    <div class="demo-item">
+                        <p class="demo-label">Success Message</p>
+                        <div class="form-message visible success">
+                            Your message has been sent successfully!
+                        </div>
+                    </div>
+
+                    <div class="demo-item">
+                        <p class="demo-label">Error Message</p>
+                        <div class="form-message visible error">
+                            Please fix the errors above before submitting.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hidden State -->
+            <div class="demo-container">
+                <h2 class="demo-title">Hidden State (Default)</h2>
+                <div class="demo-item">
+                    <p class="demo-label">Message not visible</p>
+                    <div class="form-message success">
+                        This message is hidden by default
+                    </div>
+                    <p style="margin-top: 1rem; color: var(--color-text); font-size: 0.9rem; text-align: center;">
+                        Message has opacity: 0 and is not visible
+                    </p>
+                </div>
+            </div>
+
+            <!-- Message Variants -->
+            <div class="demo-container">
+                <h2 class="demo-title">Success Message Variants</h2>
+                <div class="demo-grid">
+                    <div class="demo-item">
+                        <div class="form-message visible success">
+                            Message sent successfully!
+                        </div>
+                    </div>
+
+                    <div class="demo-item">
+                        <div class="form-message visible success">
+                            Your account has been created.
+                        </div>
+                    </div>
+
+                    <div class="demo-item">
+                        <div class="form-message visible success">
+                            Settings saved successfully.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Error Message Variants -->
+            <div class="demo-container">
+                <h2 class="demo-title">Error Message Variants</h2>
+                <div class="demo-grid">
+                    <div class="demo-item">
+                        <div class="form-message visible error">
+                            Please fix the errors above.
+                        </div>
+                    </div>
+
+                    <div class="demo-item">
+                        <div class="form-message visible error">
+                            Oops! Something went wrong.
+                        </div>
+                    </div>
+
+                    <div class="demo-item">
+                        <div class="form-message visible error">
+                            Invalid email or password.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Demo -->
+            <div class="demo-container">
+                <h2 class="demo-title">Interactive Demo</h2>
+                <div class="demo-item" style="max-width: 500px; margin: 0 auto;">
+                    <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 2rem;">
+                        <button class="form-submit" style="min-width: auto; padding: 0.75rem 1.5rem;" onclick="showSuccess()">
+                            <span class="submit-text">Show Success</span>
+                        </button>
+                        <button class="form-submit" style="min-width: auto; padding: 0.75rem 1.5rem;" onclick="showError()">
+                            <span class="submit-text">Show Error</span>
+                        </button>
+                    </div>
+                    <div class="form-message" id="demoMessage" role="alert" aria-live="polite"></div>
+                </div>
+            </div>
+
+            <!-- Code Example -->
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-title">HTML Structure</span>
+                </div>
+                <pre class="code-content">&lt;!-- Success Message (visible) --&gt;
+&lt;div class="form-message visible success" role="alert" aria-live="polite"&gt;
+    Your message has been sent successfully!
+&lt;/div&gt;
+
+&lt;!-- Error Message (visible) --&gt;
+&lt;div class="form-message visible error" role="alert" aria-live="polite"&gt;
+    Please fix the errors above before submitting.
+&lt;/div&gt;
+
+&lt;!-- Hidden Message (default) --&gt;
+&lt;div class="form-message success" role="alert" aria-live="polite"&gt;
+&lt;/div&gt;</pre>
+            </div>
+
+            <!-- JavaScript -->
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-title">JavaScript Usage</span>
+                </div>
+                <pre class="code-content">const formMessage = document.getElementById('formMessage');
+
+function showFormMessage(message, type) {
+    formMessage.textContent = message;
+    formMessage.className = 'form-message visible ' + type;
+
+    // Auto-hide after 5 seconds
+    setTimeout(() => {
+        formMessage.classList.remove('visible');
+    }, 5000);
+}
+
+// Show success
+showFormMessage('Message sent successfully!', 'success');
+
+// Show error
+showFormMessage('Please fix the errors above', 'error');</pre>
+            </div>
+
+            <!-- CSS Reference -->
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-title">CSS Classes & Styling</span>
+                </div>
+                <pre class="code-content">Classes:
+  .form-message     - Base message styling
+  .visible          - Makes message visible
+  .success          - Success styling (green)
+  .error            - Error styling (red)
+
+Base Styling:
+  • Padding: 1rem 1.5rem
+  • Border-radius: 4px
+  • Margin-bottom: 2rem
+  • Font-size: 0.95rem
+  • Font-weight: 500
+  • Text-align: center
+  • Opacity: 0 (hidden)
+  • Transform: translateY(-10px)
+  • Transition: all 0.3s ease
+  • Pointer-events: none
+
+Visible State:
+  • Opacity: 1
+  • Transform: translateY(0)
+  • Pointer-events: auto
+
+Success Styling:
+  • Background: rgba(34, 197, 94, 0.1)
+  • Border: 1px solid rgba(34, 197, 94, 0.3)
+  • Color: rgb(34, 197, 94)
+
+Error Styling:
+  • Background: rgba(239, 68, 68, 0.1)
+  • Border: 1px solid rgba(239, 68, 68, 0.3)
+  • Color: rgb(239, 68, 68)
+
+Styling Reference:
+  styles.css:762-791</pre>
+            </div>
+
+            <!-- Props/Attributes -->
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-title">Blazor Component Props</span>
+                </div>
+                <pre class="code-content">Proposed Props:
+
+Message (string)
+  - Message text content
+
+Type (string) [Required]
+  - "success" | "error"
+
+IsVisible (bool)
+  - Controls visibility
+
+AutoDismiss (bool)
+  - Auto-hide after timeout (default: true)
+
+DismissTimeout (int)
+  - Milliseconds before auto-hide (default: 5000)
+
+OnDismiss (EventCallback)
+  - Called when message is dismissed
+
+CssClass (string)
+  - Additional CSS classes</pre>
+            </div>
+
+            <!-- Implementation Notes -->
+            <div class="demo-container">
+                <h2 class="demo-title">Implementation Notes</h2>
+                <div class="code-content" style="white-space: normal; line-height: 1.8;">
+                    <strong style="color: var(--color-primary);">Animation:</strong><br>
+                    • Slides up (translateY -10px → 0) while fading in<br>
+                    • Smooth 0.3s ease transition<br>
+                    • Reverse animation when hiding<br><br>
+
+                    <strong style="color: var(--color-primary);">Auto-Dismiss:</strong><br>
+                    • Default 5-second timeout<br>
+                    • Can be disabled for persistent messages<br>
+                    • Configurable timeout duration<br>
+                    • Clear timeout if manually dismissed<br><br>
+
+                    <strong style="color: var(--color-primary);">Color Scheme:</strong><br>
+                    • Success: Green (#22c55e)<br>
+                    • Error: Red (#ef4444)<br>
+                    • Low opacity backgrounds for subtlety<br>
+                    • Matching border colors<br><br>
+
+                    <strong style="color: var(--color-primary);">Accessibility:</strong><br>
+                    • role="alert" for screen reader announcement<br>
+                    • aria-live="polite" for non-intrusive updates<br>
+                    • Clear, actionable message text<br>
+                    • Sufficient color contrast<br><br>
+
+                    <strong style="color: var(--color-primary);">Usage:</strong><br>
+                    • Display at top of form<br>
+                    • Show after form submission<br>
+                    • Clear on new submission attempt<br>
+                    • Don't show multiple messages simultaneously<br><br>
+
+                    <strong style="color: var(--color-primary);">Best Practices:</strong><br>
+                    • Keep messages concise<br>
+                    • Use positive language for success<br>
+                    • Be specific about errors<br>
+                    • Don't blame the user
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p class="footer-text">© 2025 cpike</p>
+        <a href="index.html" class="footer-link">← Back to Components</a>
+    </footer>
+
+    <script>
+        const demoMessage = document.getElementById('demoMessage');
+        let dismissTimeout;
+
+        function showSuccess() {
+            clearTimeout(dismissTimeout);
+            demoMessage.textContent = 'Success! Your action completed successfully.';
+            demoMessage.className = 'form-message visible success';
+
+            dismissTimeout = setTimeout(() => {
+                demoMessage.classList.remove('visible');
+            }, 5000);
+        }
+
+        function showError() {
+            clearTimeout(dismissTimeout);
+            demoMessage.textContent = 'Error! Something went wrong. Please try again.';
+            demoMessage.className = 'form-message visible error';
+
+            dismissTimeout = setTimeout(() => {
+                demoMessage.classList.remove('visible');
+            }, 5000);
+        }
+    </script>
+</body>
+</html>

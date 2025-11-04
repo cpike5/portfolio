@@ -1,27 +1,23 @@
+/* Blazor-specific styles for Identity and validation */
+
+/* Sticky footer layout */
 html, body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    height: 100%;
 }
 
-a, .btn-link {
-    color: #006bb7;
+body {
+    display: flex;
+    flex-direction: column;
 }
 
-.btn-primary {
-    color: #fff;
-    background-color: #1b6ec2;
-    border-color: #1861ac;
+body > #app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-.content {
-    padding-top: 1.1rem;
-}
-
-h1:focus {
-    outline: none;
+.main-content {
+    flex: 1;
 }
 
 .valid.modified:not([type=checkbox]) {
@@ -42,9 +38,9 @@ h1:focus {
     color: white;
 }
 
-    .blazor-error-boundary::after {
-        content: "An error has occurred."
-    }
+.blazor-error-boundary::after {
+    content: "An error has occurred."
+}
 
 .darker-border-checkbox.form-check-input {
     border-color: #929292;

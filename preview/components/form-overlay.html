@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FormOverlay Component - cpike.ca</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../tokens.css">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="components.css">
+</head>
+<body>
+    <!-- Desktop Navigation -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="index.html">Components</a></li>
+            <li><a href="form-overlay.html" class="active">FormOverlay</a></li>
+        </ul>
+    </nav>
+
+    <main class="showcase-container">
+        <!-- Component Header -->
+        <section class="component-section">
+            <div class="component-header">
+                <h1 class="component-name">FormOverlay</h1>
+                <p class="component-description">
+                    Full-form overlay with backdrop blur, loading spinner, and status message.
+                    Displayed during form submission to prevent user interaction.
+                </p>
+                <div class="component-meta">
+                    <span class="phase-badge phase-3">Phase 3</span>
+                    <span class="component-tag">Form</span>
+                    <span class="component-tag">Overlay</span>
+                    <span class="component-tag">Loading</span>
+                </div>
+            </div>
+
+            <!-- Live Demo -->
+            <div class="demo-container">
+                <h2 class="demo-title">Form with Overlay</h2>
+                <div class="demo-item" style="max-width: 600px; margin: 0 auto;">
+                    <div style="position: relative;">
+                        <!-- Demo Form -->
+                        <form class="contact-form">
+                            <div class="form-group">
+                                <label for="demo-name" class="form-label">Name</label>
+                                <input type="text" id="demo-name" placeholder="Enter your name" class="form-input">
+                                <span class="form-error"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="demo-email" class="form-label">Email</label>
+                                <input type="email" id="demo-email" placeholder="Enter your email" class="form-input">
+                                <span class="form-error"></span>
+                            </div>
+
+                            <button type="button" class="form-submit" onclick="document.getElementById('demoOverlay').classList.add('visible');">
+                                <span class="submit-text">Submit</span>
+                                <span class="submit-loader"></span>
+                            </button>
+                        </form>
+
+                        <!-- Overlay -->
+                        <div class="form-overlay" id="demoOverlay" onclick="this.classList.remove('visible');">
+                            <div class="overlay-spinner"></div>
+                            <p class="overlay-text">Submitting your message...</p>
+                        </div>
+                    </div>
+                    <p style="margin-top: 1rem; color: var(--color-text); font-size: 0.9rem; text-align: center;">
+                        Click submit to see the overlay (click overlay to dismiss)
+                    </p>
+                </div>
+            </div>
+
+            <!-- Overlay States -->
+            <div class="demo-container">
+                <h2 class="demo-title">Overlay Variants</h2>
+                <div class="demo-grid">
+                    <div class="demo-item" style="position: relative; min-height: 300px;">
+                        <p class="demo-label">With Spinner and Text</p>
+                        <div style="position: relative; height: 200px; background: rgba(35, 41, 51, 0.6); border-radius: 8px;">
+                            <div class="form-overlay visible">
+                                <div class="overlay-spinner"></div>
+                                <p class="overlay-text">Processing...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="demo-item" style="position: relative; min-height: 300px;">
+                        <p class="demo-label">Spinner Only</p>
+                        <div style="position: relative; height: 200px; background: rgba(35, 41, 51, 0.6); border-radius: 8px;">
+                            <div class="form-overlay visible">
+                                <div class="overlay-spinner"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="demo-item" style="position: relative; min-height: 300px;">
+                        <p class="demo-label">Hidden (Default)</p>
+                        <div style="position: relative; height: 200px; background: rgba(35, 41, 51, 0.6); border-radius: 8px;">
+                            <div class="form-overlay">
+                                <div class="overlay-spinner"></div>
+                                <p class="overlay-text">Hidden overlay</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Message Variants -->
+            <div class="demo-container">
+                <h2 class="demo-title">Message Variants</h2>
+                <div class="demo-grid">
+                    <div class="demo-item" style="position: relative; min-height: 300px;">
+                        <p class="demo-label">Submitting</p>
+                        <div style="position: relative; height: 200px; background: rgba(35, 41, 51, 0.6); border-radius: 8px;">
+                            <div class="form-overlay visible">
+                                <div class="overlay-spinner"></div>
+                                <p class="overlay-text">Submitting your message...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="demo-item" style="position: relative; min-height: 300px;">
+                        <p class="demo-label">Processing</p>
+                        <div style="position: relative; height: 200px; background: rgba(35, 41, 51, 0.6); border-radius: 8px;">
+                            <div class="form-overlay visible">
+                                <div class="overlay-spinner"></div>
+                                <p class="overlay-text">Processing your request...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="demo-item" style="position: relative; min-height: 300px;">
+                        <p class="demo-label">Saving</p>
+                        <div style="position: relative; height: 200px; background: rgba(35, 41, 51, 0.6); border-radius: 8px;">
+                            <div class="form-overlay visible">
+                                <div class="overlay-spinner"></div>
+                                <p class="overlay-text">Saving changes...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Code Example -->
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-title">HTML Structure</span>
+                </div>
+                <pre class="code-content">&lt;div class="form-wrapper"&gt;
+    &lt;!-- Form Content --&gt;
+    &lt;form class="contact-form"&gt;
+        &lt;!-- form fields here --&gt;
+    &lt;/form&gt;
+
+    &lt;!-- Overlay (hidden by default) --&gt;
+    &lt;div class="form-overlay" id="formOverlay"&gt;
+        &lt;div class="overlay-spinner"&gt;&lt;/div&gt;
+        &lt;p class="overlay-text"&gt;Submitting your message...&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+            </div>
+
+            <!-- JavaScript -->
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-title">JavaScript Usage</span>
+                </div>
+                <pre class="code-content">const formOverlay = document.getElementById('formOverlay');
+
+// Show overlay
+formOverlay.classList.add('visible');
+
+// Hide overlay
+formOverlay.classList.remove('visible');
+
+// Example: Show during async operation
+async function submitForm() {
+    formOverlay.classList.add('visible');
+
+    try {
+        await fetch('/api/submit', { method: 'POST', body: formData });
+        // Handle success
+    } catch (error) {
+        // Handle error
+    } finally {
+        formOverlay.classList.remove('visible');
+    }
+}</pre>
+            </div>
+
+            <!-- CSS Reference -->
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-title">CSS Classes & Styling</span>
+                </div>
+                <pre class="code-content">Classes:
+  .form-overlay      - Overlay container
+  .visible           - Shows the overlay
+  .overlay-spinner   - Loading spinner (48px)
+  .overlay-text      - Status message text
+
+Overlay Styling:
+  • Position: absolute (covers form)
+  • Top/Left/Right/Bottom: 0 (full coverage)
+  • Background: rgba(50, 50, 50, 0.8)
+  • Backdrop-filter: blur(8px)
+  • Display: flex, flex-direction: column
+  • Align-items: center
+  • Justify-content: center
+  • Gap: 1.5rem
+  • Border-radius: 4px
+  • Z-index: 10
+
+Hidden State:
+  • Opacity: 0
+  • Visibility: hidden
+  • Transition: all 0.3s ease
+
+Visible State:
+  • Opacity: 1
+  • Visibility: visible
+
+Spinner:
+  • Width: 48px
+  • Height: 48px
+  • Border: 3px solid rgba(183, 65, 254, 0.2)
+  • Border-top-color: var(--color-primary)
+  • Animation: rotate 0.8s linear infinite
+
+Text:
+  • Font-size: 1rem
+  • Color: var(--color-primary)
+  • Font-weight: 500
+  • Letter-spacing: 0.05em
+  • Margin: 0
+
+Styling Reference:
+  styles.css:976-1023</pre>
+            </div>
+
+            <!-- Props/Attributes -->
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-title">Blazor Component Props</span>
+                </div>
+                <pre class="code-content">Proposed Props:
+
+IsVisible (bool)
+  - Controls overlay visibility
+
+Message (string)
+  - Status message text (default: "Processing...")
+
+ShowSpinner (bool)
+  - Show loading spinner (default: true)
+
+CssClass (string)
+  - Additional CSS classes</pre>
+            </div>
+
+            <!-- Implementation Notes -->
+            <div class="demo-container">
+                <h2 class="demo-title">Implementation Notes</h2>
+                <div class="code-content" style="white-space: normal; line-height: 1.8;">
+                    <strong style="color: var(--color-primary);">Purpose:</strong><br>
+                    • Prevent user interaction during submission<br>
+                    • Provide visual feedback for async operations<br>
+                    • Indicate processing is in progress<br>
+                    • Block form inputs while request is pending<br><br>
+
+                    <strong style="color: var(--color-primary);">Positioning:</strong><br>
+                    • Parent container must have position: relative<br>
+                    • Overlay uses absolute positioning<br>
+                    • Covers entire form area<br>
+                    • Z-index ensures it's on top<br><br>
+
+                    <strong style="color: var(--color-primary);">Visual Design:</strong><br>
+                    • Dark semi-transparent background<br>
+                    • Backdrop blur for depth<br>
+                    • Centered spinner and text<br>
+                    • Smooth fade-in/out transitions<br><br>
+
+                    <strong style="color: var(--color-primary);">Animation:</strong><br>
+                    • Fades in when shown (opacity 0 → 1)<br>
+                    • Fades out when hidden (opacity 1 → 0)<br>
+                    • Visibility property prevents interaction when hidden<br>
+                    • 0.3s transition timing<br><br>
+
+                    <strong style="color: var(--color-primary);">Usage Pattern:</strong><br>
+                    • Show before async operation starts<br>
+                    • Hide when operation completes (success or error)<br>
+                    • Always hide in finally block<br>
+                    • Update message text for different operations<br><br>
+
+                    <strong style="color: var(--color-primary);">Accessibility:</strong><br>
+                    • Announce loading state to screen readers<br>
+                    • Prevent keyboard navigation to form during loading<br>
+                    • Clear status message<br>
+                    • Don't rely solely on visual spinner
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p class="footer-text">© 2025 cpike</p>
+        <a href="index.html" class="footer-link">← Back to Components</a>
+    </footer>
+</body>
+</html>

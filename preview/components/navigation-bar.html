@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NavigationBar Component - cpike.ca</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../tokens.css">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="components.css">
+</head>
+<body>
+    <!-- Desktop Navigation -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="index.html">Components</a></li>
+            <li><a href="navigation-bar.html" class="active">NavigationBar</a></li>
+        </ul>
+    </nav>
+
+    <main class="showcase-container">
+        <!-- Component Header -->
+        <section class="component-section">
+            <div class="component-header">
+                <h1 class="component-name">NavigationBar</h1>
+                <p class="component-description">
+                    Desktop sticky navigation with active state tracking and smooth hover animations.
+                    Features centered horizontal layout with underline effects.
+                </p>
+                <div class="component-meta">
+                    <span class="phase-badge phase-1">Phase 1</span>
+                    <span class="component-tag">Layout</span>
+                    <span class="component-tag">Navigation</span>
+                </div>
+            </div>
+
+            <!-- Live Demo -->
+            <div class="demo-container">
+                <h2 class="demo-title">Live Demo</h2>
+                <div class="demo-item">
+                    <p class="demo-label">Default Navigation</p>
+                    <nav class="navbar" style="position: relative; top: 0;">
+                        <ul class="nav-links">
+                            <li><a href="#home" class="active">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#skills">Skills</a></li>
+                            <li><a href="#projects">Projects</a></li>
+                            <li><a href="#work">Work</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Variants -->
+            <div class="demo-container">
+                <h2 class="demo-title">State Variants</h2>
+                <div class="demo-grid">
+                    <div class="demo-item">
+                        <p class="demo-label">Active First Item</p>
+                        <nav class="navbar" style="position: relative; top: 0;">
+                            <ul class="nav-links">
+                                <li><a href="#home" class="active">Home</a></li>
+                                <li><a href="#about">About</a></li>
+                                <li><a href="#skills">Skills</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div class="demo-item">
+                        <p class="demo-label">Active Middle Item</p>
+                        <nav class="navbar" style="position: relative; top: 0;">
+                            <ul class="nav-links">
+                                <li><a href="#home">Home</a></li>
+                                <li><a href="#about" class="active">About</a></li>
+                                <li><a href="#skills">Skills</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div class="demo-item">
+                        <p class="demo-label">Minimal Navigation (2-3 items)</p>
+                        <nav class="navbar" style="position: relative; top: 0;">
+                            <ul class="nav-links">
+                                <li><a href="#home">Home</a></li>
+                                <li><a href="#about" class="active">About</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Code Example -->
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-title">HTML Structure</span>
+                </div>
+                <pre class="code-content">&lt;nav class="navbar"&gt;
+    &lt;ul class="nav-links"&gt;
+        &lt;li&gt;&lt;a href="#home" class="active"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#about"&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#skills"&gt;Skills&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#projects"&gt;Projects&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#work"&gt;Work&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</pre>
+            </div>
+
+            <!-- CSS Reference -->
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-title">CSS Classes</span>
+                </div>
+                <pre class="code-content">Key Classes:
+  .navbar           - Sticky navigation container
+  .nav-links        - Flexbox list container
+  .nav-links a      - Navigation link styling
+  .active           - Active state indicator
+
+Styling Reference:
+  styles.css:230-296
+
+Features:
+  • Sticky positioning (top: 0)
+  • Centered horizontal layout (gap: 3rem)
+  • Small-caps font variant
+  • Animated underline on hover
+  • Gradient separator below navbar
+  • Active state with full underline</pre>
+            </div>
+
+            <!-- Props/Attributes -->
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-title">Blazor Component Props</span>
+                </div>
+                <pre class="code-content">Proposed Props:
+
+NavItems (List&lt;NavItem&gt;)
+  - Text: string (display text)
+  - Href: string (link/route)
+  - IsActive: bool (active state)
+
+CssClass (string)
+  - Additional CSS classes
+
+OnNavigate (EventCallback&lt;string&gt;)
+  - Navigation event handler</pre>
+            </div>
+
+            <!-- Implementation Notes -->
+            <div class="demo-container">
+                <h2 class="demo-title">Implementation Notes</h2>
+                <div class="code-content" style="white-space: normal; line-height: 1.8;">
+                    <strong style="color: var(--color-primary);">Behavior:</strong><br>
+                    • Uses Intersection Observer to track active section<br>
+                    • Smooth scroll on link click<br>
+                    • Automatically updates active state based on scroll position<br><br>
+
+                    <strong style="color: var(--color-primary);">Accessibility:</strong><br>
+                    • Semantic &lt;nav&gt; element<br>
+                    • Proper list structure<br>
+                    • Keyboard navigable<br>
+                    • Focus states visible<br><br>
+
+                    <strong style="color: var(--color-primary);">Responsive:</strong><br>
+                    • Hidden on mobile (&lt;768px)<br>
+                    • MobileNavigation shown instead<br>
+                    • Reduce gap on smaller screens if needed
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p class="footer-text">© 2025 cpike</p>
+        <a href="index.html" class="footer-link">← Back to Components</a>
+    </footer>
+</body>
+</html>
