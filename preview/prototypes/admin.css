@@ -127,6 +127,12 @@ body {
     border-color: var(--color-primary);
 }
 
+.filter-select option {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    padding: 0.5rem;
+}
+
 /* Buttons */
 .btn {
     display: inline-flex;
@@ -572,6 +578,17 @@ body {
 .form-input::placeholder {
     color: var(--color-text-light);
     opacity: 0.6;
+}
+
+/* Select dropdown styling */
+select.form-input {
+    cursor: pointer;
+}
+
+select.form-input option {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    padding: 0.5rem;
 }
 
 textarea.form-input {

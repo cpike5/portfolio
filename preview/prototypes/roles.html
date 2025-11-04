@@ -12,6 +12,22 @@
     <link rel="stylesheet" href="admin.css">
 </head>
 <body>
+    <!-- Admin Mode Banner -->
+    <div style="background: linear-gradient(90deg, rgba(183, 65, 254, 0.15) 0%, rgba(183, 65, 254, 0.05) 100%); border-bottom: 1px solid rgba(183, 65, 254, 0.3); padding: 0.5rem 2rem;">
+        <div style="max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <span style="background: var(--color-primary); color: white; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em;">ADMIN MODE</span>
+                <span style="color: var(--color-text-light); font-size: 0.875rem;">Logged in as <strong style="color: var(--color-text);">admin@cpike.ca</strong></span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 1.5rem;">
+                <a href="contact-messages.html" style="color: var(--color-text-light); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; transition: color var(--transition-base);">
+                    <span>Messages</span>
+                    <span style="background: var(--color-primary); color: white; padding: 0.125rem 0.5rem; border-radius: 12px; font-size: 0.75rem; font-weight: 600; min-width: 20px; text-align: center;">12</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
     <!-- Mobile Header -->
     <header class="mobile-header">
         <button class="mobile-menu-button" aria-label="Menu" onclick="window.location.href='../index.html'">
@@ -28,6 +44,7 @@
             <li><a href="../index.html">Home</a></li>
             <li><a href="users.html">Users</a></li>
             <li><a href="roles.html" class="active">Roles</a></li>
+            <li><a href="contact-messages.html">Messages</a></li>
         </ul>
     </nav>
 
