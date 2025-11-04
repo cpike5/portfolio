@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Contact Messages</title>
+    <link rel="stylesheet" href="../../../tokens.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <!-- Admin Header -->
+    <header class="admin-header">
+        <div class="header-content">
+            <div class="header-left">
+                <h1 class="site-name">cpike.ca</h1>
+                <span class="admin-badge">ADMIN MODE</span>
+            </div>
+            <div class="header-right">
+                <a href="#" class="messages-link">
+                    Messages
+                    <span class="count-badge">12</span>
+                </a>
+                <button class="logout-btn">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+        <div class="content-wrapper">
+            <!-- Page Header -->
+            <div class="page-header">
+                <h2>Contact Messages</h2>
+            </div>
+
+            <!-- Status Tabs -->
+            <div class="status-tabs">
+                <button class="tab active" data-status="all">
+                    All <span class="tab-count">45</span>
+                </button>
+                <button class="tab" data-status="unread">
+                    Unread <span class="tab-count unread">12</span>
+                </button>
+                <button class="tab" data-status="read">
+                    Read <span class="tab-count">25</span>
+                </button>
+                <button class="tab" data-status="archived">
+                    Archived <span class="tab-count">8</span>
+                </button>
+            </div>
+
+            <!-- Toolbar -->
+            <div class="toolbar">
+                <div class="search-box">
+                    <input
+                        type="search"
+                        class="search-input"
+                        placeholder="Search messages..."
+                        id="searchInput"
+                    >
+                </div>
+                <button class="export-btn">Export CSV</button>
+            </div>
+
+            <!-- Messages List -->
+            <div class="messages-list" id="messagesList">
+                <!-- Message Card - Unread -->
+                <article class="message-card unread">
+                    <div class="message-header">
+                        <div class="sender-info">
+                            <span class="unread-indicator"></span>
+                            <h3 class="sender-name">John Doe</h3>
+                            <span class="message-time">2 hours ago</span>
+                        </div>
+                        <div class="message-actions">
+                            <button class="action-btn view" title="View Full Message">View</button>
+                            <button class="action-btn archive" title="Archive">Archive</button>
+                            <button class="action-btn spam" title="Mark as Spam">Spam</button>
+                        </div>
+                    </div>
+                    <div class="message-meta">
+                        <a href="mailto:john.doe@example.com" class="sender-email">john.doe@example.com</a>
+                    </div>
+                    <div class="message-subject">Website Development Inquiry</div>
+                    <div class="message-preview">
+                        Hey, I came across your portfolio and was really impressed with your work. I'd like to discuss a potential project for my startup...
+                    </div>
+                </article>
+
+                <!-- Message Card - Unread -->
+                <article class="message-card unread">
+                    <div class="message-header">
+                        <div class="sender-info">
+                            <span class="unread-indicator"></span>
+                            <h3 class="sender-name">Jane Smith</h3>
+                            <span class="message-time">5 hours ago</span>
+                        </div>
+                        <div class="message-actions">
+                            <button class="action-btn view" title="View Full Message">View</button>
+                            <button class="action-btn archive" title="Archive">Archive</button>
+                            <button class="action-btn spam" title="Mark as Spam">Spam</button>
+                        </div>
+                    </div>
+                    <div class="message-meta">
+                        <a href="mailto:jane.smith@techcorp.com" class="sender-email">jane.smith@techcorp.com</a>
+                    </div>
+                    <div class="message-subject">Collaboration Opportunity</div>
+                    <div class="message-preview">
+                        Hi! I'm a product manager at TechCorp and we're looking for talented developers for a collaboration opportunity. Would love to chat...
+                    </div>
+                </article>
+
+                <!-- Message Card - Read -->
+                <article class="message-card">
+                    <div class="message-header">
+                        <div class="sender-info">
+                            <h3 class="sender-name">Bob Johnson</h3>
+                            <span class="message-time">1 day ago</span>
+                        </div>
+                        <div class="message-actions">
+                            <button class="action-btn view" title="View Full Message">View</button>
+                            <button class="action-btn archive" title="Archive">Archive</button>
+                            <button class="action-btn spam" title="Mark as Spam">Spam</button>
+                        </div>
+                    </div>
+                    <div class="message-meta">
+                        <a href="mailto:bob.johnson@email.com" class="sender-email">bob.johnson@email.com</a>
+                    </div>
+                    <div class="message-subject">Quick Question</div>
+                    <div class="message-preview">
+                        I noticed you're using Blazor for this portfolio. How has your experience been with it compared to React or Vue?
+                    </div>
+                </article>
+
+                <!-- Message Card - Read -->
+                <article class="message-card">
+                    <div class="message-header">
+                        <div class="sender-info">
+                            <h3 class="sender-name">Sarah Williams</h3>
+                            <span class="message-time">2 days ago</span>
+                        </div>
+                        <div class="message-actions">
+                            <button class="action-btn view" title="View Full Message">View</button>
+                            <button class="action-btn archive" title="Archive">Archive</button>
+                            <button class="action-btn spam" title="Mark as Spam">Spam</button>
+                        </div>
+                    </div>
+                    <div class="message-meta">
+                        <a href="mailto:sarah.w@consulting.com" class="sender-email">sarah.w@consulting.com</a>
+                    </div>
+                    <div class="message-subject">Speaking Engagement</div>
+                    <div class="message-preview">
+                        We're organizing a tech meetup next month and would love to have you speak about your experience with .NET and cloud architecture...
+                    </div>
+                </article>
+
+                <!-- Message Card - Read -->
+                <article class="message-card">
+                    <div class="message-header">
+                        <div class="sender-info">
+                            <h3 class="sender-name">Mike Chen</h3>
+                            <span class="message-time">3 days ago</span>
+                        </div>
+                        <div class="message-actions">
+                            <button class="action-btn view" title="View Full Message">View</button>
+                            <button class="action-btn archive" title="Archive">Archive</button>
+                            <button class="action-btn spam" title="Mark as Spam">Spam</button>
+                        </div>
+                    </div>
+                    <div class="message-meta">
+                        <a href="mailto:mchen@startupxyz.io" class="sender-email">mchen@startupxyz.io</a>
+                    </div>
+                    <div class="message-subject">Freelance Project Proposal</div>
+                    <div class="message-preview">
+                        Our startup is building a SaaS platform and we need someone with your backend expertise. The project timeline is 3-4 months...
+                    </div>
+                </article>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <div class="pagination-info">
+                    Showing 1-5 of 45 messages
+                </div>
+                <div class="pagination-controls">
+                    <button class="page-btn" disabled>Previous</button>
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <button class="page-btn">Next</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Message Detail Modal -->
+    <div class="modal" id="messageModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Message Details</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="detail-section">
+                    <h4>From</h4>
+                    <p class="detail-name">John Doe</p>
+                    <a href="mailto:john.doe@example.com" class="detail-email">john.doe@example.com</a>
+                </div>
+
+                <div class="detail-section">
+                    <h4>Subject</h4>
+                    <p>Website Development Inquiry</p>
+                </div>
+
+                <div class="detail-section">
+                    <h4>Message</h4>
+                    <div class="detail-message">
+                        <p>Hey, I came across your portfolio and was really impressed with your work. I'd like to discuss a potential project for my startup. We're building a cloud-based SaaS platform and need someone with strong .NET and Azure experience.</p>
+                        <p>Would you be available for a quick call next week to discuss the details?</p>
+                        <p>Looking forward to hearing from you!</p>
+                    </div>
+                </div>
+
+                <div class="detail-section">
+                    <h4>Metadata</h4>
+                    <div class="metadata-grid">
+                        <div class="metadata-item">
+                            <span class="metadata-label">Received:</span>
+                            <span>Jan 4, 2025 at 2:34 PM</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">IP Address:</span>
+                            <span>192.168.1.100</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Status:</span>
+                            <span class="status-badge unread">Unread</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="detail-section">
+                    <h4>Admin Notes</h4>
+                    <textarea class="admin-notes" placeholder="Add private notes about this message..."></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary">Mark as Read</button>
+                <button class="btn-secondary">Archive</button>
+                <button class="btn-danger">Mark as Spam</button>
+                <button class="btn-primary">Save Notes</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
