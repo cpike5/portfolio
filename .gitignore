@@ -21,4 +21,11 @@ src/**/bin/
 src/**/obj/
 src/**/Logs/
 src/Portfolio.Web/wwwroot/lib/bootstrap/
+
+# Database files
+*.db
+*.db-shm
+*.db-wal
+src/Portfolio.Web/Data/*.db*
+
 infra/
