@@ -1,23 +1,18 @@
 /* Blazor-specific styles for Identity and validation */
 
-/* Sticky footer layout */
+/* Fix Blazor app structure to allow sticky positioning */
 html, body {
-    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-}
-
-body > #app {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+/* Ensure Blazor app wrapper doesn't interfere with sticky positioning */
+#app {
+    display: contents;
 }
 
 .main-content {
-    flex: 1;
+    display: block;
 }
 
 .valid.modified:not([type=checkbox]) {

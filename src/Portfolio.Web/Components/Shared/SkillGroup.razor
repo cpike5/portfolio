@@ -1,0 +1,17 @@
+<div class="skill-group">
+    <h3 class="skill-group-title">@GroupTitle</h3>
+    <div class="skills-grid">
+        @foreach (var skill in Skills)
+        {
+            <div class="skill-item">@skill</div>
+        }
+    </div>
+</div>
+
+@code {
+    [Parameter, EditorRequired]
+    public string GroupTitle { get; set; } = string.Empty;
+
+    [Parameter, EditorRequired]
+    public List<string> Skills { get; set; } = new();
+}
