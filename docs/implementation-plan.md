@@ -2155,6 +2155,228 @@ mkdir -p Components/Pages/Admin
 
 ---
 
+## 5. Phase 5: UI Showcase (Future Enhancement)
+
+**Goal:** Implement interactive component library and design system documentation
+
+**Duration:** 7-9 days
+
+**Prerequisites:**
+- Phase 1-4 complete
+- All core components implemented and stable
+- Design system tokens finalized
+
+### 5.1 Foundation Setup
+
+#### Task 5.1: Create Page Structure
+**Duration**: 4 hours
+
+**Steps:**
+1. Create `Components/Pages/UIShowcase.razor`
+2. Create `Components/Showcase/` directory
+3. Set up basic page layout with header and sections
+4. Add route `/ui-showcase`
+5. Update navigation (NavMenu.razor, MobileNav.razor)
+6. Create `wwwroot/css/showcase.css`
+
+**Acceptance Criteria:**
+- [ ] Page accessible at `/ui-showcase`
+- [ ] Navigation links work from main site
+- [ ] Basic layout renders correctly
+- [ ] Responsive on mobile
+
+---
+
+#### Task 5.2: Design Tokens Section
+**Duration**: 3 hours
+
+**Steps:**
+1. Create `TokenDisplay.razor` component
+2. Create `ColorSwatch.razor` component
+3. Implement color palette display from `tokens.css`
+4. Implement typography scale display
+5. Implement spacing scale display
+6. Add copy-to-clipboard functionality
+
+**Acceptance Criteria:**
+- [ ] All design tokens displayed accurately
+- [ ] Color swatches match actual colors
+- [ ] Typography scale is readable
+- [ ] Copy buttons work for hex codes
+
+---
+
+### 5.2 Component Demonstrations
+
+#### Task 5.3: Showcase Infrastructure Components
+**Duration**: 4 hours
+
+**Steps:**
+1. Create `ComponentSection.razor` - category wrapper
+2. Create `ComponentDemo.razor` - individual demo wrapper
+3. Create `CodeBlock.razor` - code display with highlighting
+4. Create `CopyButton.razor` - copy to clipboard
+5. Style components for consistent presentation
+
+**Acceptance Criteria:**
+- [ ] Components are reusable
+- [ ] Layout is consistent
+- [ ] Code blocks display properly
+- [ ] Copy functionality works
+
+---
+
+#### Task 5.4: Buttons & Actions Section
+**Duration**: 3 hours
+
+**Steps:**
+1. Create section for buttons
+2. Add primary button examples (all states)
+3. Add outline button examples
+4. Add loading button examples
+5. Add disabled button examples
+6. Provide code samples for each
+
+**Acceptance Criteria:**
+- [ ] All button variants displayed
+- [ ] Interactive states work (hover, click)
+- [ ] Code samples accurate
+- [ ] Responsive on mobile
+
+---
+
+#### Task 5.5: Forms & Inputs Section
+**Duration**: 5 hours
+
+**Steps:**
+1. Create forms section
+2. Add text input examples (all states)
+3. Add textarea examples with character counter
+4. Add checkbox and radio examples
+5. Add form validation examples
+6. Make all inputs interactive
+7. Provide code samples
+
+**Acceptance Criteria:**
+- [ ] All input types displayed
+- [ ] Validation states visible
+- [ ] Inputs are functional
+- [ ] Character counters work
+- [ ] Code samples accurate
+
+---
+
+#### Task 5.6: Feedback Components Section
+**Duration**: 4 hours
+
+**Steps:**
+1. Create alerts section (Success, Error, Warning, Info)
+2. Add modal dialog examples
+3. Add loading spinner examples
+4. Make modals functional (open/close)
+5. Make alerts dismissible
+6. Provide code samples
+
+**Acceptance Criteria:**
+- [ ] All alert types displayed
+- [ ] Modals open and close
+- [ ] Alerts dismissible
+- [ ] Loading states animate
+- [ ] Code samples accurate
+
+---
+
+#### Task 5.7: Navigation & Layout Section
+**Duration**: 4 hours
+
+**Steps:**
+1. Create tabs component demonstration
+2. Add breadcrumb examples
+3. Add card component examples
+4. Add section container examples
+5. Make tabs functional
+6. Provide code samples
+
+**Acceptance Criteria:**
+- [ ] Tabs switch correctly
+- [ ] Breadcrumbs display properly
+- [ ] Cards render with all variants
+- [ ] Code samples accurate
+
+---
+
+### 5.3 Polish & Features
+
+#### Task 5.8: Sidebar Navigation
+**Duration**: 3 hours
+
+**Steps:**
+1. Create sticky sidebar for desktop
+2. Add jump links to all sections
+3. Implement active section highlighting
+4. Make responsive (hamburger on mobile)
+5. Add smooth scroll behavior
+
+**Acceptance Criteria:**
+- [ ] Sidebar sticky on scroll
+- [ ] Jump links navigate correctly
+- [ ] Active section highlighted
+- [ ] Mobile menu works
+
+---
+
+#### Task 5.9: Code Features
+**Duration**: 2 hours
+
+**Steps:**
+1. Add syntax highlighting to code blocks
+2. Implement copy-to-clipboard with feedback
+3. Add toggle to show/hide code samples
+4. Format all code samples consistently
+
+**Acceptance Criteria:**
+- [ ] Syntax highlighting works
+- [ ] Copy provides visual feedback
+- [ ] Toggle functionality smooth
+- [ ] Code properly formatted
+
+---
+
+#### Task 5.10: Testing & Refinement
+**Duration**: 4 hours
+
+**Steps:**
+1. Cross-browser testing
+2. Accessibility review
+3. Mobile responsive testing
+4. Performance optimization
+5. Fix any issues found
+6. Documentation update
+
+**Acceptance Criteria:**
+- [ ] Works in all major browsers
+- [ ] Keyboard accessible
+- [ ] Screen reader compatible
+- [ ] Performance acceptable
+- [ ] Documentation updated
+
+---
+
+### Phase 5 Completion Criteria
+
+- [ ] All component sections complete
+- [ ] All demos interactive
+- [ ] Design tokens section complete
+- [ ] Code samples accurate and copyable
+- [ ] Navigation works on all devices
+- [ ] Responsive on mobile, tablet, desktop
+- [ ] Accessibility WCAG 2.1 AA compliant
+- [ ] Cross-browser compatible
+- [ ] No console errors
+- [ ] Documentation updated
+
+---
+
 ## 6. Testing Strategy
 
 ### Manual Testing Checklist
@@ -2199,3 +2421,4 @@ mkdir -p Components/Pages/Admin
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
 | 1.0 | 2025-11-03 | cpike | Initial implementation plan |
+| 1.1 | 2025-11-04 | cpike | Added Phase 5: UI Showcase implementation tasks |

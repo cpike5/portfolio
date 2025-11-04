@@ -128,11 +128,19 @@ portfolio/
 │       │   ├── Pages/
 │       │   │   ├── Home.razor
 │       │   │   ├── Contact.razor
+│       │   │   ├── UIShowcase.razor (future)
 │       │   │   ├── Admin/
 │       │   │   │   ├── Dashboard.razor
 │       │   │   │   ├── Submissions.razor
 │       │   │   │   └── Login.razor
 │       │   │   └── Error.razor
+│       │   ├── Showcase/ (future)
+│       │   │   ├── ComponentSection.razor
+│       │   │   ├── ComponentDemo.razor
+│       │   │   ├── CodeBlock.razor
+│       │   │   ├── TokenDisplay.razor
+│       │   │   ├── ColorSwatch.razor
+│       │   │   └── CopyButton.razor
 │       │   └── Shared/
 │       │       ├── ProjectCard.razor
 │       │       ├── SkillGroup.razor
@@ -161,7 +169,8 @@ portfolio/
 │       │   ├── css/
 │       │   │   ├── tokens.css
 │       │   │   ├── styles.css
-│       │   │   └── app.css
+│       │   │   ├── app.css
+│       │   │   └── showcase.css (future)
 │       │   ├── js/
 │       │   │   └── site.js
 │       │   └── assets/
@@ -171,11 +180,12 @@ portfolio/
 │       ├── Program.cs
 │       └── Portfolio.Web.csproj
 ├── docs/
-│   ├── PRD.md
-│   ├── USER_STORIES.md
-│   ├── TECH_SPECS.md
-│   ├── FUNCTIONAL_SPECS.md
-│   └── IMPLEMENTATION_PLAN.md
+│   ├── prd.md
+│   ├── user-stories.md
+│   ├── tech-specs.md
+│   ├── functional-specs.md
+│   ├── implementation-plan.md
+│   └── ui-showcase-spec.md
 ├── infra/
 │   └── deployment-notes.md
 ├── deploy.sh
@@ -418,7 +428,13 @@ App.razor
     │   │   └── Contact Section (inline form)
     │   ├── Admin/Dashboard.razor (protected)
     │   │   └── Submissions list
-    │   └── Admin/Login.razor
+    │   ├── Admin/Login.razor
+    │   └── UIShowcase.razor (future)
+    │       ├── ComponentSection.razor (repeated)
+    │       ├── ComponentDemo.razor (repeated)
+    │       ├── CodeBlock.razor
+    │       ├── TokenDisplay.razor
+    │       └── ColorSwatch.razor
     ├── Footer.razor
     └── BackToTop.razor
 ```
@@ -1090,6 +1106,14 @@ app.Use(async (context, next) =>
 - `ASPNETCORE_URLS`: http://localhost:5000
 - `ConnectionStrings__DefaultConnection`: Override connection string
 
+### Related Documents
+
+- [Product Requirements Document](prd.md)
+- [Functional Specifications](functional-specs.md)
+- [Implementation Plan](implementation-plan.md)
+- [UI Showcase Specification](ui-showcase-spec.md)
+- [User Stories](user-stories.md)
+
 ---
 
 **Document Version History**
@@ -1097,3 +1121,4 @@ app.Use(async (context, next) =>
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
 | 1.0 | 2025-11-03 | cpike | Initial technical specifications |
+| 1.1 | 2025-11-04 | cpike | Added UI Showcase feature architecture |
