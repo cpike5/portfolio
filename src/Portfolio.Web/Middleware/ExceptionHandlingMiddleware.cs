@@ -103,7 +103,7 @@ public class ExceptionHandlingMiddleware
 
             // For browser requests, redirect will be handled by the existing exception handler
             // This allows the built-in exception handler to work with our error details
-            throw; // Re-throw to let the built-in handler redirect to /Error
+            throw exception; // Re-throw to let the built-in handler redirect to /Error
         }
     }
 }
