@@ -627,6 +627,24 @@ body {
     letter-spacing: 0.02em;
     transition: all var(--transition-base);
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.project-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--color-background);
+    background-color: var(--color-primary);
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-variant: normal;
+    transition: all var(--transition-base);
 }
 
 .project-card:hover .project-title {
