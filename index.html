@@ -34,28 +34,47 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;600&family=Inter:wght@400;500;600&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="tokens.css">
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "cpike",
+      "url": "https://cpike.ca",
+      "jobTitle": "Full Stack .NET Developer",
+      "description": "Full Stack .NET Developer with 12+ years of experience building enterprise applications for automotive manufacturing",
+      "knowsAbout": ["C#", ".NET Core", "Blazor", "Azure", "SQL Server", "Elasticsearch", "JavaScript"],
+      "sameAs": [
+        "https://github.com/cpike5"
+      ]
+    }
+    </script>
 </head>
 <body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <!-- Mobile Header -->
     <header class="mobile-header">
-        <button class="mobile-menu-button" aria-label="Menu" id="mobileMenuButton">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="menu-icon">
+        <button class="mobile-menu-button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu" id="mobileMenuButton">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="menu-icon" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" />
             </svg>
         </button>
-        <div class="mobile-title">cpike.ca</div>
+        <div class="mobile-title" aria-label="Site logo">cpike.ca</div>
     </header>
 
     <!-- Mobile Navigation Menu -->
-    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
-    <nav class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay" aria-hidden="true"></div>
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation" role="navigation">
         <div class="mobile-menu-header">
             <span class="mobile-menu-title">Menu</span>
-            <button class="mobile-menu-close" aria-label="Close menu" id="mobileMenuClose">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="close-icon">
+            <button class="mobile-menu-close" aria-label="Close navigation menu" id="mobileMenuClose">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="close-icon" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
@@ -71,7 +90,7 @@
     </nav>
 
     <!-- Desktop Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main navigation" role="navigation">
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -82,11 +101,11 @@
         </ul>
     </nav>
 
-    <main class="main-content">
+    <main class="main-content" id="main-content">
         <section id="home" class="hero">
             <h1 class="hero-title">cpike.ca</h1>
-            <a href="#about" class="scroll-indicator">
-                <span class="arrow-down"></span>
+            <a href="#about" class="scroll-indicator" aria-label="Scroll to about section">
+                <span class="arrow-down" aria-hidden="true"></span>
             </a>
         </section>
 
@@ -165,10 +184,10 @@
 
                 <div class="projects-grid">
                     <div class="project-card">
-                        <img src="assets/preview.png" alt="home.cpike.ca screenshot" class="project-image">
+                        <img src="assets/preview.png" alt="Screenshot of Personal Web Platform showing Blazor Server application with modern UI" class="project-image" loading="lazy" width="800" height="400">
                         <h3 class="project-title">
                             Personal Web Platform
-                            <span class="project-badge">Coming Soon</span>
+                            <span class="project-badge" aria-label="Project status: Coming Soon">Coming Soon</span>
                         </h3>
                         <p class="project-description">
                             Full-featured .NET 8 Blazor Server application with OAuth authentication, invitation-based registration, Markdown blog with SEO optimization, and admin dashboard. Built with a prototype-first development approach and comprehensive component library.
@@ -179,7 +198,7 @@
                     </div>
 
                     <div class="project-card">
-                        <img src="assets/preview.png" alt="Discord Bot Framework screenshot" class="project-image">
+                        <img src="assets/preview.png" alt="Screenshot of Discord Bot Framework showing admin dashboard and bot management interface" class="project-image" loading="lazy" width="800" height="400">
                         <h3 class="project-title">Discord Bot Framework</h3>
                         <p class="project-description">
                             ASP.NET Core Discord bot framework with Discord.NET integration and a Blazor admin dashboard. Features secure user registration via Discord DMs, account linking, and multi-database support for extensible bot development.
@@ -190,7 +209,7 @@
                     </div>
 
                     <div class="project-card">
-                        <img src="assets/preview.png" alt="Portfolio Site screenshot" class="project-image">
+                        <img src="assets/preview.png" alt="Screenshot of minimalist portfolio website with purple color scheme and smooth animations" class="project-image" loading="lazy" width="800" height="400">
                         <h3 class="project-title">Portfolio Site</h3>
                         <p class="project-description">
                             Minimalist portfolio built with vanilla HTML, CSS, and JavaScript. Open sourced as a template.

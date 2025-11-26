@@ -9,11 +9,70 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
 body {
     background-color: var(--color-background);
     font-family: var(--font-family-base);
     font-size: var(--font-size-base);
     min-height: 100vh;
+}
+
+/* Skip to Main Content Link - Accessibility */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--color-primary);
+    color: var(--color-background);
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    z-index: 9999;
+    border-radius: 0 0 4px 0;
+    transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+    top: 0;
+    outline: 3px solid var(--color-primary-hover);
+    outline-offset: 2px;
+}
+
+/* Improved Focus States for All Interactive Elements */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--color-primary-hover);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* Selection styling for better UX */
+::selection {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+}
+
+::-moz-selection {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+}
+
+/* Smooth scrolling with offset for fixed header */
+html {
+    scroll-padding-top: 6rem;
 }
 
 /* Mobile Header */
@@ -50,11 +109,16 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: color var(--transition-base);
+    transition: color var(--transition-base), transform 0.2s ease;
 }
 
 .mobile-menu-button:hover {
     color: var(--color-primary-hover);
+    transform: scale(1.05);
+}
+
+.mobile-menu-button:active {
+    transform: scale(0.95);
 }
 
 .menu-icon {
@@ -1341,5 +1405,63 @@ body {
     .back-to-top::before {
         width: 10px;
         height: 10px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    /* Hide interactive elements */
+    .navbar,
+    .mobile-header,
+    .mobile-menu,
+    .mobile-menu-overlay,
+    .back-to-top,
+    .scroll-indicator,
+    .skip-link {
+        display: none !important;
+    }
+
+    /* Optimize for print */
+    body {
+        background: white;
+        color: black;
+    }
+
+    main {
+        padding: 0;
+    }
+
+    section {
+        page-break-inside: avoid;
+        min-height: auto !important;
+        padding: 1rem 0 !important;
+    }
+
+    .section-title {
+        color: black;
+        page-break-after: avoid;
+    }
+
+    .project-card,
+    .work-item {
+        page-break-inside: avoid;
+        border: 1px solid #ddd;
+        background: white;
+    }
+
+    .project-image {
+        max-height: 150px;
+        object-fit: contain;
+    }
+
+    a {
+        color: black;
+        text-decoration: underline;
+    }
+
+    a[href^="http"]::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: #666;
     }
 }

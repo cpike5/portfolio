@@ -16,7 +16,7 @@
 
     /* Typography */
     --font-family-base: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    --font-family-display: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-family-display: 'Space Grotesk', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     --font-family: var(--font-family-base);
     --font-size-base: 16px;
     --font-size-nav: 0.95rem;
@@ -25,9 +25,9 @@
     --font-size-work-title: 1.5rem;
     --font-size-body: 1.125rem;
     --font-weight-nav: 500;
-    --font-weight-hero: 100;
+    --font-weight-hero: 300;
     --font-weight-section-title: 300;
-    --font-weight-work-title: 400;
+    --font-weight-work-title: 500;
 
     /* Spacing */
     --spacing-xs: 0.5rem;

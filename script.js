@@ -246,12 +246,26 @@ if (mobileMenuButton && mobileMenu && mobileMenuOverlay && mobileMenuClose) {
         mobileMenu.classList.add('active');
         mobileMenuOverlay.classList.add('active');
         document.body.style.overflow = 'hidden';
+
+        // Update ARIA attributes for accessibility
+        mobileMenuButton.setAttribute('aria-expanded', 'true');
+        mobileMenuOverlay.setAttribute('aria-hidden', 'false');
+
+        // Focus trap - move focus to close button
+        mobileMenuClose.focus();
     }
 
     function closeMobileMenu() {
         mobileMenu.classList.remove('active');
         mobileMenuOverlay.classList.remove('active');
         document.body.style.overflow = '';
+
+        // Update ARIA attributes for accessibility
+        mobileMenuButton.setAttribute('aria-expanded', 'false');
+        mobileMenuOverlay.setAttribute('aria-hidden', 'true');
+
+        // Return focus to menu button
+        mobileMenuButton.focus();
     }
 
     // Open menu when button is clicked
@@ -266,5 +280,12 @@ if (mobileMenuButton && mobileMenu && mobileMenuOverlay && mobileMenuClose) {
     // Close menu when a nav link is clicked
     mobileNavLinks.forEach(link => {
         link.addEventListener('click', closeMobileMenu);
+    });
+
+    // Close menu on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+            closeMobileMenu();
+        }
     });
 }
