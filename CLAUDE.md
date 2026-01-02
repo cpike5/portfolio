@@ -4,12 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a personal portfolio website currently undergoing migration from a static HTML/CSS/JS site to a Blazor Server application. The project maintains both versions:
-
-- **Static Site (index.html)**: Original production portfolio with vanilla HTML, CSS, and JavaScript
-- **Blazor Application (src/Portfolio.Web)**: New .NET-based server-side application with authentication, database integration, and dynamic features
-
-The site uses a minimalist design with a purple/pink color scheme and smooth scroll animations. Migration is following a phased approach (see [Migration Status](#migration-status)).
+This is a personal portfolio website built with plain HTML, CSS, and JavaScript. The site uses a minimalist design with a purple/pink color scheme and smooth scroll animations.
 
 ## Architecture
 
@@ -60,61 +55,10 @@ portfolio/
 │       ├── loading-spinner.html
 │       └── components.css  # Shared component styles
 │
-├── src/                    # Blazor Server application (Phase 1.1+)
-│   └── Portfolio.Web/
-│       ├── Components/     # Blazor components
-│       │   ├── App.razor
-│       │   ├── Routes.razor
-│       │   ├── _Imports.razor
-│       │   ├── Layout/     # Layout components
-│       │   │   ├── MainLayout.razor
-│       │   │   ├── NavMenu.razor
-│       │   │   ├── DesktopNav.razor
-│       │   │   ├── MobileNav.razor
-│       │   │   ├── MobileHeader.razor
-│       │   │   ├── BackToTop.razor
-│       │   │   └── Footer.razor
-│       │   ├── Pages/      # Page components (routable)
-│       │   │   ├── Home.razor
-│       │   │   ├── Auth.razor
-│       │   │   └── Error.razor
-│       │   ├── Shared/     # Reusable section components
-│       │   │   ├── HeroSection.razor
-│       │   │   ├── AboutSection.razor
-│       │   │   ├── SkillsSection.razor
-│       │   │   ├── SkillGroup.razor
-│       │   │   ├── ProjectsSection.razor
-│       │   │   ├── ProjectCard.razor
-│       │   │   ├── WorkSection.razor
-│       │   │   ├── WorkItem.razor
-│       │   │   └── ContactSection.razor
-│       │   └── Account/    # ASP.NET Identity authentication
-│       │       ├── Pages/  # Auth pages (Login, Register, etc.)
-│       │       └── Shared/ # Auth components
-│       ├── Data/           # EF Core DbContext and models
-│       │   ├── ApplicationDbContext.cs
-│       │   ├── ApplicationUser.cs
-│       │   └── Migrations/ # Database migrations
-│       ├── wwwroot/        # Static web assets
-│       │   ├── app.css     # Blazor-specific styles
-│       │   ├── favicon.png
-│       │   ├── css/        # Stylesheets (tokens.css, styles.css)
-│       │   ├── js/         # JavaScript files (script.js)
-│       │   └── assets/     # Images and media
-│       ├── Properties/
-│       │   └── launchSettings.json
-│       ├── appsettings.json
-│       ├── appsettings.Development.json
-│       ├── Program.cs
-│       └── Portfolio.Web.csproj
-│
 ├── docs/                   # Project documentation
 │   ├── prd.md              # Product Requirements Document
-│   ├── tech-specs.md       # Technical specifications
 │   ├── functional-specs.md # Functional specifications
-│   ├── implementation-plan.md # Migration implementation plan
 │   ├── user-stories.md     # User stories and requirements
-│   ├── blazor-components.md # Blazor component specifications
 │   └── design-guidelines.md # Design system guidelines
 │
 ├── infra/                  # Infrastructure and deployment notes (gitignored)
@@ -144,14 +88,6 @@ portfolio/
 - **preview/blog/** - Blog prototype with listing (index.html) and post template (post.html)
 - **preview/prototypes/** - Reusable UI component prototypes (login, register, tabs)
 - **preview/components/** - Standalone component showcase with 18+ interactive demos
-
-**Blazor Application (src/Portfolio.Web):**
-- **Components/Layout/** - Layout components (MainLayout, navigation, footer)
-- **Components/Pages/** - Routable pages (Home, Auth, Error)
-- **Components/Shared/** - Reusable portfolio sections (Hero, About, Skills, Projects, Work, Contact)
-- **Components/Account/** - ASP.NET Identity authentication system
-- **Data/** - Entity Framework Core DbContext, models, and migrations
-- **wwwroot/** - Static assets (CSS, JS, images)
 
 **Deployment:**
 - **deploy.sh** - Automated deployment script for web server
@@ -187,7 +123,6 @@ All components reference these tokens via CSS custom properties (e.g., `var(--co
 
 ### Testing/Previewing
 
-**Static HTML Site:**
 1. **Production Version**: Open [index.html](index.html) directly in a browser
 2. **Preview Version**: Open [preview/index.html](preview/index.html) for mobile-responsive version
 3. **Blog Prototype**: Open [preview/blog/index.html](preview/blog/index.html)
@@ -195,45 +130,23 @@ All components reference these tokens via CSS custom properties (e.g., `var(--co
 5. **Design Standards**: Open [preview/design-standards.html](preview/design-standards.html)
 6. Use a local server (e.g., `python -m http.server` or VS Code Live Server) for full functionality
 
-**Blazor Application:**
-```bash
-cd src/Portfolio.Web
-dotnet restore           # Restore dependencies
-dotnet build             # Build the project
-dotnet run               # Run the application (https://localhost:5001)
-dotnet watch             # Run with hot reload
-```
-
-Access the Blazor app at `https://localhost:5001` (or the URL shown in the terminal).
-
 ### Making Changes
 
-**Static Site - Style Changes:**
+**Style Changes:**
 - Modify design tokens in [tokens.css](tokens.css) to affect site-wide appearance
 - Edit component-specific styles in [styles.css](styles.css)
 - Blog-specific styles are in [preview/blog/blog-styles.css](preview/blog/blog-styles.css)
 - Prototype-specific styles are in their respective directories
 
-**Static Site - Content Changes:**
+**Content Changes:**
 - Production portfolio: Update [index.html](index.html)
 - Preview portfolio: Update [preview/index.html](preview/index.html)
 - Blog content: Update [preview/blog/index.html](preview/blog/index.html) or [preview/blog/post.html](preview/blog/post.html)
 
-**Static Site - Behavior Changes:**
+**Behavior Changes:**
 - Core functionality: Modify [script.js](script.js)
 - Blog functionality: Modify [preview/blog/blog-script.js](preview/blog/blog-script.js)
 - Prototype functionality: Each prototype has its own JS file
-
-**Blazor Application - Making Changes:**
-- **Components**: Edit .razor files in `src/Portfolio.Web/Components/`
-- **Styles**: Update CSS files in `src/Portfolio.Web/wwwroot/css/` (tokens.css, styles.css)
-- **JavaScript**: Modify files in `src/Portfolio.Web/wwwroot/js/`
-- **Database**: Modify models in `Data/`, then run migrations:
-  ```bash
-  dotnet ef migrations add MigrationName
-  dotnet ef database update
-  ```
-- **Configuration**: Update `appsettings.json` or `appsettings.Development.json`
 
 ### Design Philosophy
 
@@ -266,30 +179,6 @@ sudo ./deploy.sh
 
 The entire project (including preview directory) is deployed, making all pages accessible on the web server.
 
-## Migration Status
-
-The project is undergoing a phased migration from static HTML to Blazor Server. See [docs/implementation-plan.md](docs/implementation-plan.md) for full details.
-
-### Phase 1: Foundation Setup (COMPLETED ✅)
-- **Phase 1.1**: Blazor Server project initialization with ASP.NET Identity
-- **Phase 1.2**: Asset migration (CSS, JavaScript, images to wwwroot)
-- **Phase 1.3**: Layout components (MainLayout, Navigation, Footer, BackToTop)
-- **Phase 1.4**: Portfolio content implementation with reusable section components
-
-**Completed Components:**
-- ✅ Project structure and configuration
-- ✅ Layout system (MainLayout, DesktopNav, MobileNav, MobileHeader, Footer, BackToTop)
-- ✅ Section components (HeroSection, AboutSection, SkillsSection, ProjectsSection, WorkSection, ContactSection)
-- ✅ Reusable components (SkillGroup, WorkItem, ProjectCard)
-- ✅ Home page with all portfolio sections
-- ✅ ASP.NET Identity authentication system
-- ✅ Database setup with SQLite
-
-**Next Phases:**
-- **Phase 2**: Database & Contact Form (contact submissions, admin dashboard)
-- **Phase 3**: Admin Features (content management, analytics)
-- **Phase 4**: Polish & Deploy (testing, optimization, production deployment)
-
 ## Current State
 
 **Production Portfolio (index.html):**
@@ -313,17 +202,6 @@ The project is undergoing a phased migration from static HTML to Blazor Server. 
   - Tabs component
 - **Component Showcase** (components/) - 18+ standalone component demos with interactive examples
 - **Design Standards** (design-standards.html) - Interactive design system documentation
-
-**Blazor Application (src/Portfolio.Web):**
-- **Status**: Phase 1 Complete - Foundation ready for Phase 2 development
-- **Features**:
-  - Complete portfolio content (Hero, About, Skills, Projects, Work, Contact)
-  - Responsive navigation (desktop and mobile)
-  - ASP.NET Identity authentication (login, register, account management)
-  - SQLite database with Entity Framework Core
-  - Modular component architecture
-- **Tech Stack**: .NET 8, Blazor Server, Entity Framework Core, SQLite, Bootstrap
-- **Database**: SQLite (local development), migrations tracked in Data/Migrations/
 
 **Infrastructure:**
 - Deployment script for automated server updates
